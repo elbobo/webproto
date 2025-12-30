@@ -185,7 +185,7 @@
   .hero-container{
     display: grid;
     width: 100%;
-    overflow: hidden;
+    overflow: clip;
     margin-top: calc( var(--nav-height) * -1 );
     padding-top: var(--nav-height);
     background-color: var(--hero-bg);
@@ -199,7 +199,7 @@
   }
 
   .bg{
-    opacity: 0.5;
+    opacity: 0.7;
   }
 
   .fg{
@@ -263,3 +263,28 @@
     background-color: rgba(0,0,0,0.9);
   }
 
+/* grid thing */
+
+#gridoverlay{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  opacity: 0.2;
+  z-index: 5;
+}
+
+.gridlines{
+  width: 100%;
+  height: 100%;
+  padding-left: var(--general-spacing);
+  padding-right: var(--general-spacing);
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: var(--general-spacing);
+}
+
+.gridcol{
+  border-left: 1px dotted green;
+  border-right: 1px dotted green;
+}

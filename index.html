@@ -14,13 +14,16 @@
   <title>Web prototype</title>
     
   </head>
-  <body>
+  <body style="overflow-x: hidden">
 
     <nav id="globalNav">
     </nav>
 
-    <div class="hero-container">
+    <div id="gridoverlay">
+    </div>
 
+    <div class="hero-container">
+     
       <div id="heroBg" class="hero bg">
       </div>
 
@@ -40,7 +43,7 @@
               </div>
             </div>
           </div>
-        </div>
+      </div>
 
     </div>
 
@@ -153,6 +156,9 @@
     fetch('footer.html')
       .then(res => res.text())
       .then(html => document.getElementById('footer').innerHTML = html);
+    fetch('grid.html')
+      .then(res => res.text())
+      .then(html => document.getElementById('gridoverlay').innerHTML = html);
     </script>
   </body>
 </html>
