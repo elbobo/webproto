@@ -74,8 +74,8 @@
   /* hero stuff */
 
   .hero-container{
+    display: grid;
     width: 100%;
-    height: 500px;
     overflow: hidden;
     margin-top: calc( var(--nav-height) * -1 );
     padding-top: var(--nav-height);
@@ -83,9 +83,8 @@
   }
 
   .hero{
-    position: absolute;
+    grid-area: 1 / 1;
     width: 100%;
-    height: 100%;
     padding: var(--general-spacing);
   }
 
@@ -95,7 +94,7 @@
 
   .strap{
     font-weight: bold;
-    font-size: 80px;
+    font-size: 90px;
     text-transform: uppercase;
   }
 
@@ -103,26 +102,30 @@
 
   /* content stuff */
 
-  .content{
+  .content-container{
     width: 100%;
-    height: 1000px;
   }
 
   .content-grid {
     width: 100%;
     display: flex;
     flex-direction: column;
-    padding: var(--general-spacing);
+    padding-top: var(--general-spacing);
   }
 
   .content-slice{
     width: 100%;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     gap: var(--general-spacing);
     margin-top: calc( var(--general-spacing) * 2 ) ;
   }
 
+  .content-slice.threeone{
+    grid-template-columns: 1fr 3fr;
+  }
+
   .col {
-    flex: 1;
+    border: 1px solid black;
   }
 
