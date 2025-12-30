@@ -24,10 +24,12 @@
   .centred{
     margin: auto;
     width: 100%;
-    max-width: 1400px;
+    max-width: 1600px;
   }
 
 /* nav stuff */
+
+  /*overall structure*/
 
   nav {
     position: sticky;
@@ -37,6 +39,8 @@
     height: var(--nav-height);
     z-index: 100;
     font-size: 13px;
+    padding-left: var(--general-spacing);
+    padding-right: var(--general-spacing);
     /*border-bottom: 1px solid black;*/
     
     /* Scroll-driven animation */
@@ -57,7 +61,8 @@
     flex-direction: row;
     align-items: top;
     justify-content: space-between;
-    padding: var(--general-spacing);
+    padding-top: var(--general-spacing);
+    padding-bottom: var(--general-spacing);
     height: 100%;
   }
 
@@ -76,6 +81,42 @@
 
   nav ul li:last-of-type{
     min-width: auto;
+  }
+
+  /*logo*/
+
+  #logo{
+    height: 52px;
+    border-left: 2px solid black;
+    padding-left: 8px;
+    font-weight: medium;
+    font-size: 18px;
+
+    /* Scroll-driven animation */
+    animation: bordercollapse linear forwards;
+    animation-timeline: scroll();
+    animation-range: 0 100px;
+  }
+
+  @keyframes bordercollapse {
+    to {
+      height: 18px;
+    }
+  }
+
+  #logo .hider{
+    /* Scroll-driven animation */
+    animation: logocollapse linear forwards;
+    animation-timeline: scroll();
+    animation-range: 0 80px;
+    display: block;
+  }
+
+  @keyframes logocollapse {
+    to {
+      opacity: 0;
+      margin-top: -10px;
+    }
   }
 
   /*sub nav*/
@@ -154,6 +195,7 @@
     grid-area: 1 / 1;
     width: 100%;
     padding: var(--general-spacing);
+    padding-bottom: calc( var(--general-spacing) * 2 );
   }
 
   .bg{
@@ -209,6 +251,10 @@
 
   .col img{
     width: 100%;
+  }
+
+  .col .lead{
+    margin-bottom: var(--general-spacing);
   }
 
   .footer{
