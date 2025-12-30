@@ -1,0 +1,60 @@
+  * {
+    box-sizing: border-box;
+  }
+
+  :root {
+  --nav-height: 80px;
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+
+/*all the nav stuff*/
+
+  nav {
+    position: sticky;
+    width: 100%;
+    top: 0;
+    height: var(--nav-height);
+    color: white;
+    padding: 16px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 100;
+    
+    /* Scroll-driven animation */
+    animation: shrink-nav linear forwards;
+    animation-timeline: scroll();
+    animation-range: 0 100px;
+  }
+
+  @keyframes shrink-nav {
+    to {
+      height: 40px;
+    }
+  }
+
+  nav ul{
+    display: flex;
+    flex-direction: row;
+    color: white;
+  }
+
+  nav ul li{
+    padding-left: 8px;
+  }
+
+  /*end all the nav stuff*/
+
+  .hero{
+    width: 100%;
+    height: 800px;
+    background: #332A23;
+    overflow: hidden;
+    margin-top: var(--nav-height);
+    padding-top: var(--nav-height);
+  }
