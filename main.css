@@ -4,26 +4,42 @@
 
   :root {
   --nav-height: 80px;
+  --display-font: 'Sora', sans-serif;
+  /*--hero-bg: rgba(0,0,0,0.3);*/
+  --general-spacing: 16px;
   }
 
   body {
     display: flex;
     flex-direction: column;
+    font-family: 'Inter', sans-serif;
   }
 
-/*all the nav stuff*/
+  .lead{
+    font-family: var(--display-font);
+    font-weight: bold;
+  }
+
+  .centred{
+    margin: auto;
+    width: 100%;
+    max-width: 1000px;
+  }
+
+/* nav stuff */
 
   nav {
     position: sticky;
     width: 100%;
     top: 0;
+    background-color: rgba(0,0,0,0);
     height: var(--nav-height);
     color: white;
-    padding: 16px;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    padding: var(--general-spacing);
     z-index: 100;
     
     /* Scroll-driven animation */
@@ -34,7 +50,8 @@
 
   @keyframes shrink-nav {
     to {
-      height: 40px;
+      height: calc( var(--nav-height) / 2 );
+      background-color: rgba(0,0,0,0.5);
     }
   }
 
@@ -45,16 +62,62 @@
   }
 
   nav ul li{
-    padding-left: 8px;
+    padding-left: var(--general-spacing);
   }
 
-  /*end all the nav stuff*/
+  /* end nav stuff */
+
+  /* hero stuff */
+
+  .hero-container{
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    margin-top: calc( var(--nav-height) * -1 );
+    padding-top: var(--nav-height);
+    background-color: rgba(0, 0, 0, 0.3);
+  }
 
   .hero{
+    position: absolute;
     width: 100%;
-    height: 800px;
-    background: #332A23;
-    overflow: hidden;
-    margin-top: var(--nav-height);
-    padding-top: var(--nav-height);
+    height: 100%;
+    padding: var(--general-spacing);
   }
+
+  .bg{
+    opacity: 0.2;
+  }
+
+  .strap{
+    font-weight: bold;
+    font-size: 80px;
+    text-transform: uppercase;
+  }
+
+  /* end hero stuff */
+
+  /* content stuff */
+
+  .content{
+    width: 100%;
+    height: 1000px;
+  }
+
+  .content-grid {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .content-slice{
+    width: 100%;
+    display: flex;
+    gap: var(--general-spacing);
+    margin-top: calc( var(--general-spacing) * 2 ) ;
+  }
+
+  .col {
+    flex: 1;
+  }
+
