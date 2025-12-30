@@ -19,6 +19,9 @@
     <nav id="globalNav">
     </nav>
 
+    <div id="gridoverlay">
+    </div>
+
     <div class="hero-container">
 
       <div id="heroBg" class="hero bg">
@@ -52,13 +55,13 @@
               <p>Lorem ipsum</p>
             </div>
             <div class="col">
-              <img src="images/wireframe.png">
+              <img src="https://i-dot-ai-cms.netlify.app/assets/generated_image_1-3-.png">
             </div>
             <div class="col">
-              <img src="images/wireframe.png">
+              <img src="https://i-dot-ai-cms.netlify.app/assets/image-6-.png">
             </div>
             <div class="col">
-              <img src="images/wireframe.png">
+              <img src="https://i-dot-ai-cms.netlify.app/assets/cover-for-eval-blog-.avif">
             </div>
           </div>
 
@@ -98,6 +101,9 @@
     fetch('footer.html')
       .then(res => res.text())
       .then(html => document.getElementById('footer').innerHTML = html);
+    fetch('grid.html')
+      .then(res => res.text())
+      .then(html => document.getElementById('gridoverlay').innerHTML = html);
     </script>
   </body>
 </html>

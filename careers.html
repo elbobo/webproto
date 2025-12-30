@@ -19,6 +19,9 @@
     <nav id="globalNav">
     </nav>
 
+    <div id="gridoverlay">
+    </div>
+
     <div class="hero-container">
 
       <div id="heroBg" class="hero bg">
@@ -91,6 +94,9 @@
     fetch('footer.html')
       .then(res => res.text())
       .then(html => document.getElementById('footer').innerHTML = html);
+    fetch('grid.html')
+      .then(res => res.text())
+      .then(html => document.getElementById('gridoverlay').innerHTML = html);
     </script>
   </body>
 </html>
