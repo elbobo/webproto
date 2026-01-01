@@ -253,6 +253,33 @@ nav ul li ul li{
   text-transform: uppercase;
 }
 
+/* animating the strap line on page load*/
+.strap span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeUp 0.8s ease-out forwards;
+}
+
+.strap span:nth-of-type(1) {
+  animation-delay: 0.2s;
+}
+
+.strap span:nth-of-type(2) {
+  animation-delay: 0.5s;
+}
+
+.strap span:nth-of-type(3) {
+  animation-delay: 0.8s;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .quote{
   opacity: 0.5;
   font-size: 14px;
