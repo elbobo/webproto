@@ -5,10 +5,12 @@
 :root {
 --nav-height: 150px;
 --display-font: 'Sora', sans-serif;
+--highlight-colour: rgba(0,0,0,0.5);
 --hero-bg: rgba(217,217,217,01);
 --general-spacing: 16px;
 
 /*using css vars to dynamically calculate responsive grid styling*/
+--grid-border-colour: #CBD4D6;
 --grid-total-columns: 12;
 --grid-border-width: 1px; 
 --grid-borders-per-column: calc(var(--grid-border-width) * 2); 
@@ -34,16 +36,16 @@ right: 0;
 bottom: 0;
 pointer-events: none;
 z-index: 1;
-opacity: 0.2;
+opacity: 0.4;
 
 background-image: repeating-linear-gradient(
   to right,
-  rgba(0, 100, 200, 0.4) 0,
-  rgba(0, 100, 200, 0.4) var(--grid-border-width),
+  var(--grid-border-colour),
+  var(--grid-border-colour) var(--grid-border-width),
   transparent var(--grid-border-width),
   transparent calc(var(--grid-border-width) + var(--grid-column-width)),
-  rgba(0, 100, 200, 0.4) calc(var(--grid-border-width) + var(--grid-column-width)),
-  rgba(0, 100, 200, 0.4) calc(var(--grid-borders-per-column) + var(--grid-column-width)),
+  var(--grid-border-colour) calc(var(--grid-border-width) + var(--grid-column-width)),
+  var(--grid-border-colour) calc(var(--grid-borders-per-column) + var(--grid-column-width)),
   transparent calc(var(--grid-borders-per-column) + var(--grid-column-width)),
   transparent calc(var(--grid-gap-total) + var(--grid-column-width))
 );
@@ -220,6 +222,7 @@ nav ul li ul li{
 /* hero stuff */
 
 .hero-container{
+  position: relative;
   display: grid;
   width: 100%;
   overflow: clip;
@@ -231,8 +234,6 @@ nav ul li ul li{
   grid-area: 1 / 1;
   width: 100%;
   height: 100%;
-  padding-left: var(--general-spacing);
-  padding-right: var(--general-spacing);
 }
 
 .bg{
@@ -240,6 +241,7 @@ nav ul li ul li{
 }
 
 .fg{
+  padding: var(--general-spacing);
   padding-top: var(--nav-height);
   padding-bottom: calc( var(--general-spacing) * 2 );
   z-index: 3;
@@ -314,10 +316,11 @@ nav ul li ul li{
 
 /*footer*/
 
-.footer{
+#footer{
   width: 100%;
   height: 80px;
   background-color: rgba(0,0,0,1);
+  z-index: 5;
 }
 
 /*some basic responsive stuff*/
