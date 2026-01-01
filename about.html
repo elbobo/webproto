@@ -51,12 +51,12 @@
 
           <div class="content-slice threeone">
             <div class="col"><p class="lead">Our Journey</p></div>
-            <div class="col"><img src="images/wireframe.png"></div>
+            <div class="col three"><img src="images/wireframe.png"></div>
           </div>
 
-          <div class="content-slice threeone">
+          <div class="content-slice">
             <div class="col"><p class="lead">Who we are</p></div>
-            <div class="col">i.AI is a builder’s team at the centre of government. We are made up of technologists who design and prototype real AI products that improve public outcomes.
+            <div class="col three">i.AI is a builder’s team at the centre of government. We are made up of technologists who design and prototype real AI products that improve public outcomes.
 We operate with start-up speed inside government - testing bold ideas, failing fast, and rapidly refining what delivers impact.</div>
           </div>
 
@@ -87,9 +87,6 @@ We operate with start-up speed inside government - testing bold ideas, failing f
     fetch('footer.html')
       .then(res => res.text())
       .then(html => document.getElementById('footer').innerHTML = html);
-    fetch('grid.html')
-      .then(res => res.text())
-      .then(html => document.getElementById('gridoverlay').innerHTML = html);
     </script>
   </body>
 </html>

@@ -19,18 +19,15 @@
     <nav id="globalNav">
     </nav>
 
-    <div id="gridoverlay">
-    </div>
-
     <div class="hero-container">
      
-      <div id="heroBg" class="hero bg">
+      <div id="heroBg" class="hero bg" style="background-color: white">
       </div>
 
       <div class="hero fg">
           <div class="centred">
-            <div class="content-slice threeone main">
-              <div class="col uno">
+            <div class="content-slice main">
+              <div class="col three uno">
                 <p class="strap lead">
                   <span>AI pioneers</span><br>
                   <span>Building a</span><br>
@@ -156,9 +153,6 @@
     fetch('footer.html')
       .then(res => res.text())
       .then(html => document.getElementById('footer').innerHTML = html);
-    fetch('grid.html')
-      .then(res => res.text())
-      .then(html => document.getElementById('gridoverlay').innerHTML = html);
     </script>
   </body>
 </html>
