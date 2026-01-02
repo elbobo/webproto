@@ -8,6 +8,7 @@
 --highlight-colour: rgba(0,0,0,0.5);
 --hero-bg: rgba(217,217,217,01);
 --general-spacing: 16px;
+--max-content-width: 1600px;
 
 /*using css vars to dynamically calculate responsive grid styling*/
 --grid-border-colour: #CBD4D6;
@@ -21,9 +22,15 @@
 }
 
 body {
-display: flex;
-flex-direction: column;
-font-family: 'Inter', sans-serif;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Inter', sans-serif;
+}
+
+.centred{
+  margin: auto;
+  width: 100%;
+  max-width: var(--max-content-width);
 }
 
 /* Grid overlay, uses var calcs from :root */
@@ -36,7 +43,7 @@ right: 0;
 bottom: 0;
 pointer-events: none;
 z-index: 1;
-opacity: 0.4;
+opacity: 0.7;
 
 background-image: repeating-linear-gradient(
   to right,
@@ -51,20 +58,14 @@ background-image: repeating-linear-gradient(
 );
 
 /* Match container padding */
-background-position: var(--general-spacing) 0;
-background-size: calc(100% - calc(var(--general-spacing) * 2)) 100%;
-background-repeat: no-repeat;
+  background-size: min(calc(100% - var(--general-spacing) * 2), var(--max-content-width)) 100%;
+  background-position: center top;
+  background-repeat: no-repeat;
 }
 
 .lead{
   font-family: var(--display-font);
   font-weight: bold;
-}
-
-.centred{
-  margin: auto;
-  width: 100%;
-  max-width: 1600px;
 }
 
 /* nav stuff */
@@ -251,6 +252,7 @@ nav ul li ul li{
   font-weight: bold;
   font-size: 90px;
   text-transform: uppercase;
+  color: rgba(0,0,0,0.9);
 }
 
 /* animating the strap line on page load*/
