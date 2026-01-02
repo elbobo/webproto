@@ -3,7 +3,7 @@
 }
 
 :root {
---nav-height: 150px;
+--nav-height: 170px;
 --display-font: 'Sora', sans-serif;
 --highlight-colour: rgba(0,0,0,0.5);
 --hero-bg: rgba(217,217,217,01);
@@ -86,12 +86,12 @@ nav {
   /* Scroll-driven animation */
   animation: shrink-nav linear forwards;
   animation-timeline: scroll();
-  animation-range: 0 100px;
+  animation-range: 0 var(--nav-height);
 }
 
 @keyframes shrink-nav {
   to {
-    height: 60px;
+    height: 50px;
     background-color: rgba(217,217,217,0.9);
   }
 }
@@ -109,7 +109,6 @@ nav .centred{
 nav ul{
   display: flex;
   flex-direction: row;
-  padding-top: 6px;
 }
 
 nav ul li{
