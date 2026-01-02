@@ -4,7 +4,7 @@
 
 :root {
 --nav-height: 170px;
---display-font: 'Sora', sans-serif;
+--display-font: 'Space Mono', monospace;
 --highlight-colour: rgba(0,0,0,0.5);
 --hero-bg: rgba(217,217,217,01);
 --general-spacing: 16px;
@@ -66,6 +66,7 @@ background-image: repeating-linear-gradient(
 .lead{
   font-family: var(--display-font);
   font-weight: bold;
+  font-size: 18px;
 }
 
 /* nav stuff */
@@ -285,6 +286,11 @@ nav ul li ul li{
   opacity: 0.5;
   font-size: 14px;
   padding-top: var(--general-spacing);
+  font-family: monospace;
+}
+
+.quote p{
+  margin-bottom: calc( var(--general-spacing) / 2);
 }
 
 .uno{
