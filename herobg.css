@@ -11,7 +11,8 @@
 }
 
 .pane{
-  height: 100%;
+  /*height: 100%;*/
+  height: 90%;
   background-color: #E1E4E3;
 }
 
@@ -26,11 +27,12 @@
 
 .pane:nth-of-type(4){
  grid-column: span 5;
+ height: 100%;
  /*background-image: linear-gradient(to top right, rgba(220,232,236, 1), rgba(255,255,255, 0.1));*/
  background-image: url('images/flower.png');
  background-size: cover;
  background-repeat: no-repeat;
- background-color: rgba(220,232,236, 1);
+ /*background-color: rgba(220,232,236, 1);*/
 }
 
 @media (max-width: 1600px) {
@@ -80,12 +82,12 @@
 }
 
 /* shapes */
-/* This is the only div you need to add to your page */
     .animated-background {
       position: absolute;
       top: 0;
       width: 100%;
-      height: 100%; 
+      /*height: 100%;*/
+      height: 90%; 
       background: var(--hero-bg);
       overflow: hidden;
     }
@@ -108,7 +110,7 @@
     .shape {
       width: 100%;
       height: 100%;
-      background: rgba(255, 255, 255, 0.6);
+      background: rgba(255, 255, 255, 1);
     }
 
     .shape-wrapper1 {

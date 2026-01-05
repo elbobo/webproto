@@ -7,7 +7,7 @@
 --header-font: 'Space Mono', monospace;
 --lead-font: 'Trispace', sans-serif;
 --highlight-colour: rgba(0,0,0,0.5);
---hero-bg: rgba(229,229,229,0.9);
+--hero-bg: #D9D9D9;
 --general-spacing: 16px;
 --max-content-width: 1600px;
 
@@ -229,7 +229,7 @@ nav ul li:last-of-type{
   100% { 
     top: -8px;
     height: 34px;
-    width: 64px;
+    width: 48px;
   }
 }
 
@@ -300,7 +300,7 @@ nav ul li ul li{
   width: 100%;
   overflow: clip;
   margin-top: calc( var(--nav-height) * -1 );
-  background-color: var(--hero-bg);
+  /*background-color: var(--hero-bg);*/
 }
 
 .hero{
