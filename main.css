@@ -166,36 +166,33 @@ nav ul li:last-of-type{
 
 #logo{
   position: relative;
-  height: 52px;
   padding-left: 16px;
   margin-left: -16px;
   font-weight: medium;
   font-size: 18px;
-
-  /* Scroll-driven animation */
-  animation: bordercollapse linear forwards;
-  animation-timeline: scroll();
-  animation-range: 0 100px;
 }
 
-@keyframes bordercollapse {
+#logo .mark{
+  letter-spacing: -1px;
+  font-weight: bold;
+}
+
+/*hiding the 'incubator...' text*/
+#logo .hider{
+  animation: texttoggle linear forwards;
+  animation-timeline: scroll();
+  animation-range: 0 80px;
+  display: block;
+}
+
+@keyframes texttoggle {
   to {
-    height: 18px;
+    opacity: 0;
+    margin-top: -10px;
   }
 }
 
-/*
-#logo::after{
-  content: 'i.AI';
-  color: white;
-  position: absolute;
-  top: 0;
-  left: 16px;
-  font-weight: bold;
-  letter-spacing: -1px;
-}
-*/
-
+/*for border and tab animations*/
 #logo::before{
   box-sizing: border-box;
   content: 'i.AI';
@@ -207,58 +204,32 @@ nav ul li:last-of-type{
   letter-spacing: -1px;
   top: 0;
   left: 0;
-  height: 100%;
+  height: 52px;
   width: 3px;
   background-color: black;
   overflow: hidden;
-  /* Scroll-driven animation */
-  animation: tab linear forwards;
+  animation: bordertoggle linear forwards;
   animation-timeline: scroll();
   animation-range: 0 200px;
 }
 
-@keyframes tab {
+@keyframes bordertoggle {
   0% {
     top: 0;
-    height: 100%;
+    height: 52px;
     left: 0;
     width: 3px;
   }
   66.67% {
     top: -8px;
-    height: calc( 100% + 16px );
+    height: 34px;
     left: 0;
     width: 3px;
   }
-  100% {  /* Instead of 'to' */
+  100% { 
     top: -8px;
-    height: calc( 100% + 16px );
+    height: 34px;
     width: 64px;
-    /*
-    left: 64px;
-    left: -16px;
-    width: 80px;
-    */
-  }
-}
-
-.mark{
-  letter-spacing: -1px;
-  font-weight: bold;
-}
-
-#logo .hider{
-  /* Scroll-driven animation */
-  animation: logocollapse linear forwards;
-  animation-timeline: scroll();
-  animation-range: 0 80px;
-  display: block;
-}
-
-@keyframes logocollapse {
-  to {
-    opacity: 0;
-    margin-top: -10px;
   }
 }
 
@@ -272,8 +243,6 @@ nav ul li ul li{
   margin-left: 0;
   margin-top: calc( var(--general-spacing) / 2 );
   opacity: 0.5;
-
-  /* Scroll-driven animation */
   animation: hide-subs linear forwards;
   animation-timeline: scroll();
   animation-range: 0 80px;
