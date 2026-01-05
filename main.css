@@ -7,7 +7,7 @@
 --header-font: 'Space Mono', monospace;
 --lead-font: 'Trispace', sans-serif;
 --highlight-colour: rgba(0,0,0,0.5);
---hero-bg: #D9D9D9;
+--hero-bg: rgba(229,229,229,0.9);
 --general-spacing: 16px;
 --max-content-width: 1600px;
 
@@ -132,7 +132,7 @@ nav {
 @keyframes shrink-nav {
   to {
     height: 50px;
-    background-color: var(--hero-bg);
+    background-color: rgba(229,229,229,0.5);
   }
 }
 
@@ -266,7 +266,6 @@ nav ul li ul li{
   display: none;
   cursor: pointer;
   border: none;
-  margin-top: 6px;
 }
 
   @media (max-width: 768px) {
@@ -318,13 +317,6 @@ nav ul li ul li{
   padding-top: var(--nav-height);
   padding-bottom: calc( var(--general-spacing) * 2 );
   z-index: 3;
-}
-
-.strap{
-  font-weight: bold;
-  font-size: 90px;
-  text-transform: uppercase;
-  color: rgba(0,0,0,0.9);
 }
 
 .quote{
@@ -416,7 +408,7 @@ nav ul li ul li{
   --grid-total-columns: 8;
 }
 
-.strap{
+.pagehead{
   font-size: 64px;
 }
 
@@ -424,29 +416,30 @@ nav ul li ul li{
 
 @media (max-width: 768px) {
 
-:root{
-  --grid-total-columns: 6;
-}
+  :root{
+    --grid-total-columns: 6;
+    --nav-height: 90px;
+  }
 
-.content-slice{
-  grid-template-columns: repeat(2, 1fr);
-}
+  .content-slice{
+    grid-template-columns: repeat(2, 1fr);
+  }
 
-.strap{
-  font-size: 56px;
-}
+  .pagehead{
+    font-size: 56px;
+  }
 
-.content-slice.threeone.main{
-  grid-template-columns: 1fr;
-}
+  .content-slice.threeone.main{
+    grid-template-columns: 1fr;
+  }
 
-.uno{
-  order: -1;
-}
+  .uno{
+    order: -1;
+  }
 
-.dos{
-  order: 1;
-}
+  .dos{
+    order: 1;
+  }
 
 }
 
