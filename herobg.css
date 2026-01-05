@@ -28,8 +28,8 @@
 .pane:nth-of-type(4){
  grid-column: span 5;
  height: 100%;
- /*background-image: linear-gradient(to top right, rgba(220,232,236, 1), rgba(255,255,255, 0.1));*/
- background-image: url('images/flower.png');
+ background-image: linear-gradient(to top right, rgba(220,232,236, 1), rgba(255,255,255, 0.1));
+ /*background-image: url('images/flower.png');*/
  background-size: cover;
  background-repeat: no-repeat;
  /*background-color: rgba(220,232,236, 1);*/
