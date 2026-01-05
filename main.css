@@ -4,14 +4,15 @@
 
 :root {
 --nav-height: 170px;
---display-font: 'Space Mono', monospace;
+--header-font: 'Space Mono', monospace;
+--lead-font: 'Trispace', sans-serif;
 --highlight-colour: rgba(0,0,0,0.5);
---hero-bg: rgba(217,217,217,01);
+--hero-bg: rgba(229,229,229,0.9);
 --general-spacing: 16px;
 --max-content-width: 1600px;
 
 /*using css vars to dynamically calculate responsive grid styling*/
---grid-border-colour: #CBD4D6;
+--grid-border-colour: #E89CC9;
 --grid-total-columns: 12;
 --grid-border-width: 1px; 
 --grid-borders-per-column: calc(var(--grid-border-width) * 2); 
@@ -43,7 +44,7 @@ right: 0;
 bottom: 0;
 pointer-events: none;
 z-index: 1;
-opacity: 0.7;
+opacity: 0.2;
 
 background-image: repeating-linear-gradient(
   to right,
@@ -63,10 +64,48 @@ background-image: repeating-linear-gradient(
   background-repeat: no-repeat;
 }
 
-.lead{
-  font-family: var(--display-font);
+/*typography*/
+
+.pagehead{
+  font-family: var(--header-font);
   font-weight: bold;
-  font-size: 18px;
+  font-size: 90px;
+  text-transform: uppercase;
+  color: rgba(0,0,0,0.9);
+  letter-spacing: -4px;
+}
+
+/* animating the headers on page load*/
+.pagehead span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeUp 0.8s ease-out forwards;
+}
+
+.pagehead span:nth-of-type(1) {
+  animation-delay: 0.2s;
+}
+
+.pagehead span:nth-of-type(2) {
+  animation-delay: 0.5s;
+}
+
+.pagehead span:nth-of-type(3) {
+  animation-delay: 0.8s;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.lead{
+  font-family: var(--lead-font);
+  font-weight: bold;
+  font-size: 24px;
 }
 
 /* nav stuff */
@@ -93,7 +132,7 @@ nav {
 @keyframes shrink-nav {
   to {
     height: 50px;
-    background-color: rgba(217,217,217,0.9);
+    background-color: var(--hero-bg);
   }
 }
 
@@ -126,9 +165,10 @@ nav ul li:last-of-type{
 /*logo*/
 
 #logo{
+  position: relative;
   height: 52px;
-  border-left: 2px solid black;
-  padding-left: 8px;
+  padding-left: 16px;
+  margin-left: -16px;
   font-weight: medium;
   font-size: 18px;
 
@@ -142,6 +182,69 @@ nav ul li:last-of-type{
   to {
     height: 18px;
   }
+}
+
+/*
+#logo::after{
+  content: 'i.AI';
+  color: white;
+  position: absolute;
+  top: 0;
+  left: 16px;
+  font-weight: bold;
+  letter-spacing: -1px;
+}
+*/
+
+#logo::before{
+  box-sizing: border-box;
+  content: 'i.AI';
+  color: white;
+  position: absolute;
+  text-indent: 16px;
+  padding-top: 8px;
+  font-weight: bold;
+  letter-spacing: -1px;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 3px;
+  background-color: black;
+  overflow: hidden;
+  /* Scroll-driven animation */
+  animation: tab linear forwards;
+  animation-timeline: scroll();
+  animation-range: 0 200px;
+}
+
+@keyframes tab {
+  0% {
+    top: 0;
+    height: 100%;
+    left: 0;
+    width: 3px;
+  }
+  66.67% {
+    top: -8px;
+    height: calc( 100% + 16px );
+    left: 0;
+    width: 3px;
+  }
+  100% {  /* Instead of 'to' */
+    top: -8px;
+    height: calc( 100% + 16px );
+    width: 64px;
+    /*
+    left: 64px;
+    left: -16px;
+    width: 80px;
+    */
+  }
+}
+
+.mark{
+  letter-spacing: -1px;
+  font-weight: bold;
 }
 
 #logo .hider{
@@ -255,33 +358,6 @@ nav ul li ul li{
   color: rgba(0,0,0,0.9);
 }
 
-/* animating the strap line on page load*/
-.strap span {
-  display: inline-block;
-  opacity: 0;
-  transform: translateY(10px);
-  animation: fadeUp 0.8s ease-out forwards;
-}
-
-.strap span:nth-of-type(1) {
-  animation-delay: 0.2s;
-}
-
-.strap span:nth-of-type(2) {
-  animation-delay: 0.5s;
-}
-
-.strap span:nth-of-type(3) {
-  animation-delay: 0.8s;
-}
-
-@keyframes fadeUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 .quote{
   opacity: 0.5;
   font-size: 14px;
@@ -342,6 +418,12 @@ nav ul li ul li{
 
 .col img{
   width: 100%;
+}
+
+.col.graphic{
+  padding: var(--general-spacing);
+  padding-left: 33%;
+  background-image: linear-gradient(to top right, rgba(220,232,236, 1), rgba(255,255,255, 0.1));*/
 }
 
 .col .lead{
