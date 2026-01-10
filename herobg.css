@@ -44,7 +44,7 @@
 
 }
 
-@media (max-width: 1054px) {
+@media (max-width: 1024px) {
 
   /*8 col rules*/
   .pane:nth-of-type(1), .pane:nth-of-type(3), .pane:nth-of-type(5){
