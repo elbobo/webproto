@@ -426,7 +426,7 @@ nav ul li ul li{
   grid-column: span 5;
 }
 
-.col img{
+.col img, .col video{
   width: 100%;
   margin-bottom: 16px;
 }

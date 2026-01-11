@@ -1,0 +1,75 @@
+<html lang="en">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="reset.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Trispace:wght@100..800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="herobg.css">
+  <script src="scripts/loadcontent.js"></script>
+
+  <title>Web prototype</title>
+    
+  </head>
+  <body>
+
+    <nav id="globalNav">
+    </nav>
+
+    <div class="hero-container">
+
+      <div id="heroBg" class="hero bg">
+      </div>
+
+      <div class="hero fg">
+          <div class="centred">
+            <div class="content-slice">
+              <div class="col">
+              </div>
+              <div class="col threequarters">
+                <p class="pagehead">
+                  <span class="mini">Building better</span></br>
+                  <span class="pagetitle"></span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+    </div>
+
+<div class="content-container">
+
+      <div class="content-grid">
+
+        <div class="centred">
+
+          <!--content goes here-->
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div id="footer">
+    </div>
+
+    <script>
+    // Load shared elements
+    fetch('nav.html')
+      .then(res => res.text())
+      .then(html => document.getElementById('globalNav').innerHTML = html);
+    fetch('herobg.html')
+      .then(res => res.text())
+      .then(html => document.getElementById('heroBg').innerHTML = html);
+    fetch('footer.html')
+      .then(res => res.text())
+      .then(html => document.getElementById('footer').innerHTML = html);
+    </script>
+  </body>
+</html>

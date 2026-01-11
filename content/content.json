@@ -1,0 +1,144 @@
+{
+  "categories": {
+    "planning": {
+      "name": "Planning",
+      "projects": [
+        {
+          "title": "Extract",
+          "intro": "Unlocking planning with AI-powered, modern planning data",
+          "meta": [
+            {
+              "key": "Category",
+              "value": "Planning"
+            },
+            {
+              "key": "Stage",
+              "value": "Pilot"
+            },
+             {
+              "key": "Collaborators",
+              "value": "MHCLG"
+            },
+            {
+              "key": "Read more",
+              "value": "Extract on MHCLG blog",
+              "url": "https://mhclgdigital.blog.gov.uk/2025/06/12/extract-using-ai-to-unlock-historic-planning-data/"
+            }
+          ],
+           "media": [
+             {
+              "video": "https://ai.gov.uk/videos/extract-scan.mp4",
+              "poster": "https://i-dot-ai-cms.netlify.app/assets/54944474045_30ddd538e8_w-1-1-.webp"
+            }
+          ],
+         "description": [
+            "Extract uses AI to transform complex geospatial planning documents - including hand written notes - into modern, usable data significantly faster, more consistently, and at lower cost than traditional manual methods.",
+            "Manually, it takes 2 hours to convert one planning document. Extract is 30 times faster and 120 times cheaper.",
+            "Extract will accelerate our progress toward a complete, consistent national planning database. This enables citizens to instantly see all relevant planning constraints and draw accurate site boundaries - leading to more accurate applications and fewer rejections. This enables councils to save time and money, freeing up capacity for planners to focus on assessing planning applications rather than data wrangling.",
+            "If you are a Local Authority interested in piloting Extract, contact digitalplanningteam@communities.gov.uk."
+          ],
+          "latest": [
+            "Prime Minister announces Extract at London Tech Week in June 2025.",
+            "We started testing Extract with seven councils in November 2025",
+            "We are developing an Extract app to digitise old paper planning documents into modern Geospatial data",
+            "We aim to make Extract available for all councils by Spring 2026"
+          ]
+        },
+        {
+          "title": "Augmented decision making",
+          "intro": "Driving faster planning decisions through AI-augmentation.",
+          "meta": [
+            {
+              "key": "Category",
+              "value": "Planning"
+            },
+            {
+              "key": "Stage",
+              "value": "Tendor"
+            },
+            {
+              "key": "Read more",
+              "value": "Extract on MHCLG blog",
+              "url": "https://mhclgdigital.blog.gov.uk/2025/06/12/extract-using-ai-to-unlock-historic-planning-data/"
+            }
+          ],
+           "media": [
+            {
+              "video": "https://ai.gov.uk/videos/extract-scan.mp4",
+              "poster": "https://i-dot-ai-cms.netlify.app/assets/54944474045_30ddd538e8_w-1-1-.webp"
+            }
+          ],
+         "description": [
+            "We think that AI can provide recommendations for simple planning decisions. We are calling this Augmented Decision Making would enable planners to quickly review and approve simple planning decisions. This would free up space in the system for planning officers to focus on more complex cases.",
+            "The objective is to dramatically reduce planning application processing times initially targeting a reduction from upwards of 8 weeks to circa 4 weeks, with a long-term vision of near-instant decisions for straightforward applications.",
+            "We are the first central team in government to use the full powers of the Competitive Flexible Procedure of the Procurement Act 2023."
+        ],
+        "latest": []
+        }
+      ]
+    },
+    "education": {
+      "name": "Education",
+      "projects": [
+        {
+          "title": "Education Process Mapping",
+          "intro": "Analyzing administrative bottlenecks in NHS community services",
+          "meta": {
+            "category": "Research",
+            "stage": "Discovery",
+            "onwardJourneys": [
+              {
+                "name": "Research Findings",
+                "url": "/research/nhs-processes"
+              }
+            ]
+          },
+          "media": "images/healthcare-mapping.png",
+          "description": "Comprehensive analysis of organizational structures and process flows across NHS services.\n\nFocused on identifying systemic inefficiencies in hospital discharge processes and care home placement workflows."
+        }
+      ]
+    },
+    "government": {
+      "name": "Government",
+      "projects": [
+        {
+          "title": "Government Process Mapping",
+          "intro": "Analyzing administrative bottlenecks in NHS community services",
+          "meta": {
+            "category": "Research",
+            "stage": "Discovery",
+            "onwardJourneys": [
+              {
+                "name": "Research Findings",
+                "url": "/research/nhs-processes"
+              }
+            ]
+          },
+          "media": "images/healthcare-mapping.png",
+          "description": "Comprehensive analysis of organizational structures and process flows across NHS services.\n\nFocused on identifying systemic inefficiencies in hospital discharge processes and care home placement workflows."
+        }
+      ]
+    },
+    "frontline-services": {
+      "name": "Frontline Services",
+      "projects": [
+        {
+          "title": "Frontline Process Mapping",
+          "intro": "Analyzing administrative bottlenecks in NHS community services",
+          "meta": {
+            "category": "Research",
+            "stage": "Discovery",
+            "onwardJourneys": [
+              {
+                "name": "Research Findings",
+                "url": "/research/nhs-processes"
+              }
+            ]
+          },
+          "media": "images/healthcare-mapping.png",
+          "description": "Comprehensive analysis of organizational structures and process flows across NHS services.\n\nFocused on identifying systemic inefficiencies in hospital discharge processes and care home placement workflows."
+        }
+      ]
+    }
+  }
+}
