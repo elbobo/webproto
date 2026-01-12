@@ -65,7 +65,7 @@
       ${project1HTML}
       ${project2HTML}
       <div class="col onward">
-        <a href="ourwork.html?${categorySlug}"><span>View all <span> <span>${category.name}</span> <span>projects</span></a>
+        <a href="ourwork.html?${categorySlug}"><span>View all <span> <span class="cat">${category.name}</span> <span>projects</span></a>
       </div>
     `;
     

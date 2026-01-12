@@ -493,6 +493,10 @@ nav ul li ul li{
   height: 100%;
 }
 
+.col.onward a .cat{
+  font-weight: bold;
+}
+
 .col .lead{
   margin-bottom: var(--general-spacing);
 }
