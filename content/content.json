@@ -169,7 +169,11 @@
             "Consultations are essential to effective policy-making, embedding public voices into government decisions.",
             "Manually analysing all central government consultations is a slow and costly process - it takes 75,000 days and costs taxpayers £20m a year.",
             "Consult quickly sorts thousands of responses, spotting themes. Analysts can focus on understanding these insights, helping the government create better policy faster.",
-            "We have thoroughly evaluated Consult. Read more on our evaluations."
+            "We have thoroughly evaluated Consult. Read more on our evaluations.",
+            "Consut on the Knowledge Hub",
+            "Consult on Github",
+            "Algorithmic transparency standard for Consult",
+            "AI code behind consult on github"
         ],
         "latest": [
           "We are building an open source Consult app",
@@ -201,7 +205,10 @@
             "Parlex and Lex quickly analyse this expanse of information, highlight emerging issues, map opinions, and surface relevant arguments.",
             "Parlex helps bring the views of parliamentarians directly into the policymaking process, prepare ministers more effectively, and refine policy before it is introduced.",
             "Lex eliminates the need for users to have prior knowledge of where to look or the specific terms or keywords used in the relevant pieces of legislation.", 
-            "To learn more or get involved, contact parlex@cabinetoffice.gov.uk or lex@cabinetoffice.gov.uk"
+            "To learn more or get involved, contact parlex@cabinetoffice.gov.uk or lex@cabinetoffice.gov.uk",
+            "Parlex / Lex on the Knowledge Hub",
+            "Model context protocol that underpins Parlex on Github",
+            "Algorithmic transparency standard for Parlex"
         ],
         "latest": [
           "Parlex has been rolled out to the Cabinet Office and No.10", 
@@ -231,7 +238,9 @@
             "With the rise of LLMs, civil servants wanted a secure tool to 'talk' to an LLM for general tasks – drafting emails, brainstorming, etc.",
             "We rolled out Redbox to over 6000 users, spanning 150,000 chats and 1.3m messages.",
             "With enterprise tools like Copilot and Gemini now widely available, we sunset Redbox to focus on mission‑led products.",
-            "We’ve written on a blog on the lessons learned"
+            "We’ve written on a blog on the lessons learned",
+            "Redbox on the knowledge Hub",
+            "Redbox on Github"
         ],
         "latest": [
           "We sunset Redbox in 2025 as departments adopt new enterprise AI tools"
@@ -265,7 +274,9 @@
          "description": [
             "Across the public sector, millions of conversations drive essential services: assessments, interviews, case reviews. Taking meeting notes adds to an already great administrative burden. Social workers, for example, spend approximately 80% of their time on computers versus only 20% with people.",
             "Minute frees public servants to be fully present in meetings and appointments while it handles the admin in the background. It transforms raw conversations into structured, high-quality summaries - saving time, reducing errors and improving service quality.",
-            "We conducted a pilot across 22 local authorities. One council reported time savings between 50-87%, depending on the complexity of the case. This allows frontline staff to spend more time with people face-to-face."
+            "We conducted a pilot across 22 local authorities. One council reported time savings between 50-87%, depending on the complexity of the case. This allows frontline staff to spend more time with people face-to-face.",
+            "Minute on the Knowledge Hub",
+            "Minute on Github"
           ],
           "latest": [
             "Minute has been approved for conversations up to Official-Sensitive",
