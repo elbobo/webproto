@@ -23,7 +23,7 @@
            "media": [
              {
               "video": "https://ai.gov.uk/videos/extract-scan.mp4",
-              "poster": "https://i-dot-ai-cms.netlify.app/assets/54944474045_30ddd538e8_w-1-1-.webp"
+              "poster": "https://i-dot-ai-cms.netlify.app/assets/s300_shutterstock_2384416179-1-.webp"
             }
           ],
          "description": [
@@ -58,10 +58,7 @@
             }
           ],
            "media": [
-            {
-              "video": "https://ai.gov.uk/videos/extract-scan.mp4",
-              "poster": "https://i-dot-ai-cms.netlify.app/assets/54944474045_30ddd538e8_w-1-1-.webp"
-            }
+              "https://i-dot-ai-cms.netlify.app/assets/53843731820_b3e62c29fc_w-2-.webp"
           ],
          "description": [
             "We think that AI can provide recommendations for simple planning decisions. We are calling this Augmented Decision Making would enable planners to quickly review and approve simple planning decisions. This would free up space in the system for planning officers to focus on more complex cases.",
@@ -74,64 +71,232 @@
     },
     "education": {
       "name": "Education",
-      "projects": [
+     "projects": [
         {
-          "title": "Education Process Mapping",
-          "intro": "Analyzing administrative bottlenecks in NHS community services",
-          "meta": {
-            "category": "Research",
-            "stage": "Discovery",
-            "onwardJourneys": [
-              {
-                "name": "Research Findings",
-                "url": "/research/nhs-processes"
-              }
-            ]
-          },
-          "media": "images/healthcare-mapping.png",
-          "description": "Comprehensive analysis of organizational structures and process flows across NHS services.\n\nFocused on identifying systemic inefficiencies in hospital discharge processes and care home placement workflows."
+          "title": "Sovereign Benchmark",
+          "intro": "Can we ratify and improve safety and quality of AI tutors?",
+          "meta": [
+            {
+              "key": "Category",
+              "value": "Education"
+            },
+            {
+              "key": "Stage",
+              "value": "Pilot"
+            }
+          ],
+           "media": [
+            "https://i-dot-ai-cms.netlify.app/assets/54944474045_30ddd538e8_w-1-1-.webp"
+          ],
+         "description": [
+            "Benchmarking is essential for evaluating model performance.",
+            "We are creating robust benchmarks aligned with national Teachers’ Standards to ensure tools follow pedagogical principles and safeguard pupils when interacting with AI.",
+            "We have established a new educational AI taskforce, bringing together the top pedagogy, safety and AI experts from inside and outside government, to drive delivery.",
+            "By the end of 2026, we will publish the first version of the Sovereign Education Benchmark. This will include a public report, an extensive dataset for providers, and a leaderboard to drive market competition and raise standards."
+          ],
+          "latest": []
+        },
+        {
+          "title": "AI classroom assistants",
+          "intro": "Lorem ipsum...",
+          "meta": [
+            {
+              "key": "Category",
+              "value": "Education"
+            },
+            {
+              "key": "Stage",
+              "value": "Pilot"
+            }
+          ],
+           "media": [
+              "https://i-dot-ai-cms.netlify.app/assets/54424488713_33a8705997_c.jpg-2.webp"
+          ],
+         "description": [
+            "We are partnering with the Department for Education to pilot and evaluate edtech tools in schools, to assess their impact on pupil outcomes, and collect large-scale data.",
+            "Schools and colleges will trial and evaluate digital and AI tools to understand what works best for teaching and learning. This will provide real pupil interaction data which is critical for the creation of the sovereign benchmarks."
+        ],
+        "latest": []
+        },
+        {
+          "title": "Digital Curriculum",
+          "intro": "Lorem ipsum...",
+          "meta": [
+            {
+              "key": "Category",
+              "value": "Education"
+            },
+            {
+              "key": "Stage",
+              "value": "Pilot"
+            }
+          ],
+           "media": [
+              "content/images/wireframe.png"
+          ],
+         "description": [
+            "We are working closely with the Department for Education and the wider AI Education ecosystem, to publish a national digital curriculum that fully digitises subject content and guidance, enabling educational tools to integrate directly with the schemes of work used in England’s classrooms.",
+            "We will also be prototyping the Open Data Standard, and working with the sector to shape it."
+        ],
+        "latest": []
         }
       ]
     },
     "government": {
       "name": "Government",
-      "projects": [
+     "projects": [
         {
-          "title": "Government Process Mapping",
-          "intro": "Analyzing administrative bottlenecks in NHS community services",
-          "meta": {
-            "category": "Research",
-            "stage": "Discovery",
-            "onwardJourneys": [
-              {
-                "name": "Research Findings",
-                "url": "/research/nhs-processes"
-              }
-            ]
-          },
-          "media": "images/healthcare-mapping.png",
-          "description": "Comprehensive analysis of organizational structures and process flows across NHS services.\n\nFocused on identifying systemic inefficiencies in hospital discharge processes and care home placement workflows."
+          "title": "Consult",
+          "intro": "Transforming the process of public consultations",
+          "meta": [
+            {
+              "key": "Category",
+              "value": "Government"
+            },
+            {
+              "key": "Stage",
+              "value": "Rollout, Pilot"
+            }
+          ],
+           "media": [
+              "https://i-dot-ai-cms.netlify.app/assets/53982545501_2e98b88f4d_w.webp"
+          ],
+         "description": [
+            "Consultations are essential to effective policy-making, embedding public voices into government decisions.",
+            "Manually analysing all central government consultations is a slow and costly process - it takes 75,000 days and costs taxpayers £20m a year.",
+            "Consult quickly sorts thousands of responses, spotting themes. Analysts can focus on understanding these insights, helping the government create better policy faster.",
+            "We have thoroughly evaluated Consult. Read more on our evaluations."
+        ],
+        "latest": [
+          "We are building an open source Consult app",
+          "We are rolling out Consult to all government departments in 2026.",
+          "Consult has already saved £200,000 in analysis public consultations"
+        ]
+        },
+        {
+          "title": "Parlex / Lex",
+          "intro": "Intelligently search parliamentary and legal information for more insightful policy",
+          "meta": [
+            {
+              "key": "Category",
+              "value": "Government"
+            },
+            {
+              "key": "Stage",
+              "value": "Rollout"
+            }
+          ],
+           "media": [
+            {
+              "video": "https://ai.gov.uk/videos/parlex-promo.mp4",
+              "poster": "https://i-dot-ai-cms.netlify.app/assets/54975606506_cd82931bfc_w.webp"
+            }
+          ],
+         "description": [
+            "UK legislation and parliamentary information spans centuries and grows every year. Although publicly available, it is difficult to access, search and use. This is especially true for teams building tools for policy analysis, drafting, compliance or public services.",
+            "Parlex and Lex quickly analyse this expanse of information, highlight emerging issues, map opinions, and surface relevant arguments.",
+            "Parlex helps bring the views of parliamentarians directly into the policymaking process, prepare ministers more effectively, and refine policy before it is introduced.",
+            "Lex eliminates the need for users to have prior knowledge of where to look or the specific terms or keywords used in the relevant pieces of legislation.", 
+            "To learn more or get involved, contact parlex@cabinetoffice.gov.uk or lex@cabinetoffice.gov.uk"
+        ],
+        "latest": [
+          "Parlex has been rolled out to the Cabinet Office and No.10", 
+          "We are experimenting with how Lex can be a legal API for AI agents and researchers"
+        ]
+        },
+        {
+          "title": "Redbox",
+          "intro": "Gen-AI to assist civil servants in their day-to-day tasks",
+          "meta": [
+            {
+              "key": "Category",
+              "value": "Government"
+            },
+            {
+              "key": "Stage",
+              "value": "Sunset"
+            }
+          ],
+           "media": [
+            {
+              "video": "https://ai.gov.uk/videos/redbox-promo-v5a.mp4",
+              "poster": "https://i-dot-ai-cms.netlify.app/assets/redbox.webp"
+            }
+          ],
+         "description": [
+            "With the rise of LLMs, civil servants wanted a secure tool to 'talk' to an LLM for general tasks – drafting emails, brainstorming, etc.",
+            "We rolled out Redbox to over 6000 users, spanning 150,000 chats and 1.3m messages.",
+            "With enterprise tools like Copilot and Gemini now widely available, we sunset Redbox to focus on mission‑led products.",
+            "We’ve written on a blog on the lessons learned"
+        ],
+        "latest": [
+          "We sunset Redbox in 2025 as departments adopt new enterprise AI tools"
+        ]
         }
       ]
     },
     "frontline-services": {
       "name": "Frontline Services",
-      "projects": [
+     "projects": [
         {
-          "title": "Frontline Process Mapping",
-          "intro": "Analyzing administrative bottlenecks in NHS community services",
-          "meta": {
-            "category": "Research",
-            "stage": "Discovery",
-            "onwardJourneys": [
+          "title": "Minute",
+          "intro": "A secure AI scribe, built for public services",
+          "meta": [
+            {
+              "key": "Category",
+              "value": "Frontline services"
+            },
+            {
+              "key": "Stage",
+              "value": "Rollout"
+            }
+          ],
+           "media": [
+             {
+              "video": "https://ai.gov.uk/videos/minute-promo.mp4",
+              "poster": "https://i-dot-ai-cms.netlify.app/assets/54540106593_a938e7465d_w-2-.webp"
+            }
+          ],
+         "description": [
+            "Across the public sector, millions of conversations drive essential services: assessments, interviews, case reviews. Taking meeting notes adds to an already great administrative burden. Social workers, for example, spend approximately 80% of their time on computers versus only 20% with people.",
+            "Minute frees public servants to be fully present in meetings and appointments while it handles the admin in the background. It transforms raw conversations into structured, high-quality summaries - saving time, reducing errors and improving service quality.",
+            "We conducted a pilot across 22 local authorities. One council reported time savings between 50-87%, depending on the complexity of the case. This allows frontline staff to spend more time with people face-to-face."
+          ],
+          "latest": [
+            "Minute has been approved for conversations up to Official-Sensitive",
+            "MHCLG agreed to advance Minute into a private beta, with the goal of further developing and scaling it as a centrally hosted tool tailored for frontline workers in local government."
+          ]
+        },
+        {
+          "title": "Caddy",
+          "intro": "Caddy helps Citizens Advice advisers find clear, trusted answers in seconds",
+          "meta": [
+            {
+              "key": "Category",
+              "value": "Frontline services"
+            },
+            {
+              "key": "Stage",
+              "value": "Rollout"
+            },
+             {
+              "key": "Collaborators",
+              "value": "Citizen's advice"
+            }
+          ],
+           "media": [
               {
-                "name": "Research Findings",
-                "url": "/research/nhs-processes"
+                "video": "https://ai.gov.uk/videos/caddy-promo.mp4",
+                "poster": "https://i-dot-ai-cms.netlify.app/assets/citizensadvice-5-.webp"
               }
-            ]
-          },
-          "media": "images/healthcare-mapping.png",
-          "description": "Comprehensive analysis of organizational structures and process flows across NHS services.\n\nFocused on identifying systemic inefficiencies in hospital discharge processes and care home placement workflows."
+          ],
+         "description": [
+            "Citizens Advice supports millions each year through complex issues - benefits, debt, housing, tax and more. Advisers work under pressure, handling huge amounts of information while offering calm, accurate, human support. Finding the right guidance fast is tough; sharing it clearly is tougher.",
+            "Caddy is a quick, reliable assistant that surfaces trusted information, cuts search time, and helps advisers give confident, consistent answers.",
+            "It draws from verified Citizens Advice and GOV.UK sources, shows exactly where each answer comes from, and routes responses for human checks when needed.",
+            "Citizens Advice is rolling out Caddy across more local offices and exploring wider uses across the network."
+        ],
+        "latest": []
         }
       ]
     }
