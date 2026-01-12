@@ -10,7 +10,7 @@
 --lead-font: 'Arial', sans-serif;
 --highlight-colour: rgba(0,0,0,0.5);
 --hero-bg: rgba(229,229,229,0.9);
---general-spacing: 16px;
+--general-spacing: 24px;
 --general-divider: rgba(0,0,0,0.2);
 --max-content-width: 1600px;
 --layout-columns: repeat(var(--grid-total-columns), 1fr); /*getting layout to match grid defined below so when it adapts only change in one place*/
