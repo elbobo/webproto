@@ -168,7 +168,10 @@
             "Consultations are essential to effective policy-making, embedding public voices into government decisions.",
             "Manually analysing all central government consultations is a slow and costly process - it takes 75,000 days and costs taxpayers £20m a year.",
             "Consult quickly sorts thousands of responses, spotting themes. Analysts can focus on understanding these insights, helping the government create better policy faster.",
-            "We have thoroughly evaluated Consult. Read more on our evaluations."
+            "We have thoroughly evaluated Consult. Read more on our evaluations.",
+            "Consult on the knowledge hub",
+            "Consult on Github",
+            
         ],
         "latest": [
           "We are building an open source Consult app",

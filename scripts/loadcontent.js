@@ -147,11 +147,11 @@
         ${metaHTML}
         </div>
     </div>
-    <div class="col project-media">
-        ${mediaHTML}
-    </div>
     <div class="col project-text">
         ${descriptionHTML}
+    </div>
+    <div class="col project-media">
+      ${mediaHTML}
     </div>
     ${latestHTML ? `<div class="col project-latest">\n      ${latestHTML}\n    </div>` : ''}
     `;
