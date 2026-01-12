@@ -2,6 +2,7 @@
   "categories": {
     "planning": {
       "name": "Planning",
+      "description": "Making planning better and faster",
       "projects": [
         {
           "title": "Extract",
@@ -71,6 +72,7 @@
     },
     "education": {
       "name": "Education",
+      "description": "Improving attainment in schools",
      "projects": [
         {
           "title": "Sovereign Benchmark",
@@ -144,6 +146,7 @@
     },
     "government": {
       "name": "Government",
+      "description": "Building a smarter state",
      "projects": [
         {
           "title": "Consult",
@@ -237,6 +240,7 @@
     },
     "frontline-services": {
       "name": "Frontline Services",
+      "description": "Better serving citizens",
      "projects": [
         {
           "title": "Minute",

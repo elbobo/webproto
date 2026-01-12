@@ -375,16 +375,18 @@ nav ul li ul li{
   width: 100%;
   display: grid;
   grid-template-columns: var(--layout-columns);
-  grid-template-rows: min-content 1fr; /* row 1 = smallest content, row 2 = fills space */
-  column-gap: var(--general-spacing);
-  row-gap: 0;
+  gap: var(--general-spacing);
   margin-top: calc( var(--general-spacing) * 2 );
-  align-items: start;
 }
 
 .content-slice.project{
   border-bottom: 1px solid var(--general-divider);
   padding-bottom: var(--general-spacing);
+  grid-template-rows: min-content 1fr; /* row 1 = smallest content, row 2 = fills space */
+  column-gap: var(--general-spacing);
+  row-gap: 0;
+  align-items: start;
+  scroll-margin-top: 100px;
 }
 
 /*some generic rules for column widths regardless of column numbers so I don't have to give everything a rule*/
@@ -452,6 +454,10 @@ nav ul li ul li{
   text-transform: uppercase;
 }
   
+.col img{
+  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
+}
 
 .col img, .col video{
   width: 100%;
@@ -460,7 +466,8 @@ nav ul li ul li{
   object-fit: cover;
 }
 
-.col.graphic{
+.col.pillar{
+  grid-column: span 4;
   padding: var(--general-spacing);
   padding-left: 33%;
   background-image: linear-gradient(to top right, rgba(220,232,236, 1), rgba(255,255,255, 0.1));*/
@@ -515,9 +522,6 @@ nav ul li ul li{
     font-size: 64px;
   }
 
-  .content-slice .col.project-intro{
-  }
-
   .content-slice .col.project-media{
     grid-column: 4 / span 5;
     grid-row: 1;
@@ -527,23 +531,6 @@ nav ul li ul li{
     grid-column: 4 / span 5;
     grid-row: 2 / span 2;
   }
-
-  .content-slice .col.project-latest {
-  }
-
-  /*
-  .content-slice .col.project-intro, .content-slice .col.project-media, .content-slice .col.project-text {
-    grid-column: span calc( var(--grid-total-columns) / 2 );
-  }
-
-  .content-slice .col.project-media{
-    grid-row: 2;
-  }
-
-  .content-slice .col.project-text{
-    grid-row: 1 / 3;
-  }
-  */
 
 }
 
@@ -558,17 +545,13 @@ nav ul li ul li{
     font-size: 56px;
   }
 
-  .uno{
-    order: -1;
-  }
-
-  .dos{
-    order: 1;
-  }
-
   .content-slice .col.project-intro, .content-slice .col.project-media, .content-slice .col.project-text,  .content-slice .col.project-latest{
     grid-column: span var(--grid-total-columns);
     grid-row: auto;
+  }
+
+  .content-slice .col.project-intro{
+    margin-bottom: var(--general-spacing);
   }
 
 }

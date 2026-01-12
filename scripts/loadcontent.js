@@ -42,11 +42,21 @@
     .catch(error => {
       console.error('Error loading project data:', error);
     });
+
+    if (window.location.hash) {
+      setTimeout(() => {
+        const element = document.querySelector(window.location.hash);
+        if (element) {
+          element.scrollIntoView();
+        }
+      }, 100); // Small delay to ensure DOM is ready
+    }
   
   // Function to create a project element
   function createProjectElement(project) {
     const div = document.createElement('div');
     div.className = 'content-slice project';
+    div.id = slugify(project.title); // Add this line
     
     // Build the meta section
     let metaHTML = '';
@@ -149,3 +159,13 @@
     return div;
   }
 })();
+
+function slugify(text) {
+  return text
+    .toLowerCase()
+    .replace(/\s+/g, '-')        // Replace spaces with -
+    .replace(/[^\w\-]+/g, '')    // Remove non-word chars
+    .replace(/\-\-+/g, '-')      // Replace multiple - with single -
+    .replace(/^-+/, '')          // Trim - from start
+    .replace(/-+$/, '');         // Trim - from end
+}
