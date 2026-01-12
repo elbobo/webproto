@@ -31,7 +31,8 @@
             "Extract uses AI to transform complex geospatial planning documents - including hand written notes - into modern, usable data significantly faster, more consistently, and at lower cost than traditional manual methods.",
             "Manually, it takes 2 hours to convert one planning document. Extract is 30 times faster and 120 times cheaper.",
             "Extract will accelerate our progress toward a complete, consistent national planning database. This enables citizens to instantly see all relevant planning constraints and draw accurate site boundaries - leading to more accurate applications and fewer rejections. This enables councils to save time and money, freeing up capacity for planners to focus on assessing planning applications rather than data wrangling.",
-            "If you are a Local Authority interested in piloting Extract, contact digitalplanningteam@communities.gov.uk."
+            "If you are a Local Authority interested in piloting Extract, contact digitalplanningteam@communities.gov.uk.",
+            "Extract on the MHCLG blog"
           ],
           "latest": [
             "Prime Minister announces Extract at London Tech Week in June 2025.",
@@ -168,10 +169,7 @@
             "Consultations are essential to effective policy-making, embedding public voices into government decisions.",
             "Manually analysing all central government consultations is a slow and costly process - it takes 75,000 days and costs taxpayers £20m a year.",
             "Consult quickly sorts thousands of responses, spotting themes. Analysts can focus on understanding these insights, helping the government create better policy faster.",
-            "We have thoroughly evaluated Consult. Read more on our evaluations.",
-            "Consult on the knowledge hub",
-            "Consult on Github",
-            
+            "We have thoroughly evaluated Consult. Read more on our evaluations."
         ],
         "latest": [
           "We are building an open source Consult app",
