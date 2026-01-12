@@ -39,7 +39,7 @@
       <div class="col">
         <a href="ourwork.html?${categorySlug}#${slugify(project1.title)}">
           <img src="${getMediaImage(project1.media)}">
-          <p class="lead">${project1.title}</p>
+          <p class="projecttitlehome">${project1.title}</p>
           <p>${project1.intro}</p>
         </a>
       </div>
@@ -50,7 +50,7 @@
       <div class="col">
         <a href="ourwork.html?${categorySlug}#${slugify(project2.title)}">
           <img src="${getMediaImage(project2.media)}">
-          <p class="lead">${project2.title}</p>
+          <p class="projecttitlehome">${project2.title}</p>
           <p>${project2.intro}</p>
         </a>
       </div>
@@ -58,14 +58,14 @@
     
     // Build the complete HTML
     div.innerHTML = `
-      <div class="col">
+      <div class="col hometitle">
         <p class="lead">Building better ${category.name}</p>
         <p>${category.description}</p>
       </div>
       ${project1HTML}
       ${project2HTML}
       <div class="col onward">
-        <a href="ourwork.html?${categorySlug}">View all ${category.name} projects</a>
+        <a href="ourwork.html?${categorySlug}"><span>View all <span> <span>${category.name}</span> <span>projects</span></a>
       </div>
     `;
     
