@@ -340,7 +340,7 @@ nav ul li ul li{
 .content-slice .col.quote{
   opacity: 0.75;
   font-size: 14px;
-  padding-top: calc( var(--general-spacing) * 2 );
+  padding-top: calc( var(--general-spacing) / 2 );
   grid-column: span 2;
 }
 
@@ -450,7 +450,7 @@ nav ul li ul li{
 .content-slice .col.project-latest p{
   font-size: 14px;
   display: list-item;
-  margin-left: var(--general-spacing);
+  margin-left: 16px;
   list-style-type: circle;
   margin-bottom: 4px;
   line-height: 16px;
