@@ -95,7 +95,7 @@
     });
 
     // Handle description - either string or array
-    let descriptionHTML = '<p class="body"><strong>About ' + project.title + '</strong></p>\n                ';
+    let descriptionHTML = '';
 
     if (Array.isArray(project.description)) {
     // Description is an array of paragraphs
@@ -113,12 +113,13 @@
 
     // Handle latest section if it exists
     let latestHTML = '';
-    if (project.latest) {
-    latestHTML = '<p class="body"><strong>Latest</strong></p>\n                ';
+    if (project.latest && project.latest.length > 0) {
+
+      latestHTML = '<p class="body">Latest</p>\n';
     
     if (Array.isArray(project.latest)) {
         latestHTML += project.latest
-        .map(p => `<p class="body">${p.trim()}</p>`)
+        .map(p => `<p>${p.trim()}</p>`)
         .join('\n                ');
     } else {
         latestHTML += `<p class="body">${project.latest.trim()}</p>`;
@@ -140,11 +141,9 @@
         ${mediaHTML}
     </div>
     <div class="col project-text">
-        <div class="desc">
         ${descriptionHTML}
-        </div>
-        ${latestHTML ? `<div class="latest">\n        ${latestHTML}\n      </div>` : ''}
     </div>
+    ${latestHTML ? `<div class="col project-latest">\n      ${latestHTML}\n    </div>` : ''}
     `;
     
     return div;
