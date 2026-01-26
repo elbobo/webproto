@@ -5,7 +5,8 @@
 :root {
 --nav-height: 170px;
 /*--header-font: 'Space Mono', monospace;*/
---header-font: 'Arial', sans-serif;
+/*--header-font: 'Arial', sans-serif;*/
+--header-font: 'Plus Jakarta Sans', sans-serif;
 /*--lead-font: 'Trispace', sans-serif;*/
 --lead-font: 'Arial', sans-serif;
 --highlight-colour: rgba(0,0,0,0.5);
@@ -48,7 +49,7 @@ right: 0;
 bottom: 0;
 pointer-events: none;
 z-index: 1;
-opacity: 0.1;
+opacity: 0;
 
 background-image: repeating-linear-gradient(
   to right,

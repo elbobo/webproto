@@ -1,4 +1,4 @@
-/* panes */
+/*
 .pane_container{
     position: relative;
     width: 100%;
@@ -11,13 +11,32 @@
 }
 
 .pane{
-  /*height: 100%;*/
   height: 90%;
   background-color: #E1E4E3;
 }
 
-/*12 col rules*/
+.pane:nth-of-type(1){
+  background-color: blue;
+}
+
+.pane:nth-of-type(2){
+  background-color: blue;
+}
+
+.pane:nth-of-type(3){
+  background-color: blue;
+}
+
+.pane:nth-of-type(4){
+  background-color: red;
+  opacity: 0.3;
+}
+
 .pane:nth-of-type(1), .pane:nth-of-type(3), .pane:nth-of-type(5){
+ grid-column: span 2;
+}
+
+.pane:nth-of-type(3){
  grid-column: span 2;
 }
 
@@ -28,11 +47,9 @@
 .pane:nth-of-type(4){
  grid-column: span 5;
  height: 100%;
- background-image: linear-gradient(to top right, rgba(220,232,236, 1), rgba(255,255,255, 0.1));
- /*background-image: url('https://website.i.ai.gov.uk/images/floral-1.webp');*/
  background-size: cover;
  background-repeat: no-repeat;
- /*background-color: rgba(220,232,236, 1);*/
+ /*background-color: rgba(220,232,236, 1);
 }
 
 @media (max-width: 1600px) {
@@ -46,7 +63,6 @@
 
 @media (max-width: 1024px) {
 
-  /*8 col rules*/
   .pane:nth-of-type(1), .pane:nth-of-type(3), .pane:nth-of-type(5){
     grid-column: span 1;
   }
@@ -67,7 +83,6 @@
 
 @media (max-width: 768px) {
 
-/* 6 col rules*/
 .pane:nth-of-type(1), .pane:nth-of-type(3), .pane:nth-of-type(5){
  grid-column: span 1;
 }
@@ -81,12 +96,10 @@
 }
 }
 
-/* shapes */
     .animated-background {
       position: absolute;
       top: 0;
       width: 100%;
-      /*height: 100%;*/
       height: 90%; 
       background: var(--hero-bg);
       overflow: hidden;
@@ -145,7 +158,6 @@
       clip-path: polygon(0% 20%, 80% 0%, 100% 80%, 20% 100%);
     }
 
-    /* Animations with gentle drifting that keeps shapes visible */
     @keyframes drift1 {
       0%, 100% {
         transform: translate(0, 0) rotate(-5deg);
@@ -183,4 +195,2515 @@
       60% {
         transform: translate(-90px, -20px) rotate(-4deg) scale(1.1);
       }
+    }
+    /*
+
+    /*new planes animation approach*/
+
+     .animation-container {
+      width: 100%;
+      max-width: 100vw;
+      aspect-ratio: 16 / 9;
+      perspective: 187.50vw;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .stack-rotation-wrapper {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+      
+      transform-origin: 50% 50% 6.25vw;
+      animation-name: stackRotation;
+      animation-duration: 20s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    }
+    
+    .background-plane {
+      position: absolute;
+      width: 300%;
+      height: 300%;
+      left: -100%;
+      top: -100%;
+      background: white;
+      transform: translateZ(-1000vw);
+      pointer-events: none;
+    }
+    
+    .plane {
+      position: absolute;
+      width: 18.75vw;
+      height: 18.75vw;
+      left: 50%;
+      top: 50%;
+      margin-left: -9.38vw;
+      margin-top: -9.38vw;
+      transform-style: preserve-3d;
+    }
+    
+
+@keyframes plane0Animation {
+  0.00% {
+    transform: translateX(0.00vw) 
+               translateY(0.00vw) 
+               translateZ(0.00vw)
+               rotateX(0.00deg)
+               rotateY(0.00deg)
+               rotateZ(0.00deg);
+  }
+  2.00% {
+    transform: translateX(-1.72vw) 
+               translateY(-1.44vw) 
+               translateZ(-1.03vw)
+               rotateX(-7.07deg)
+               rotateY(-10.95deg)
+               rotateZ(-10.49deg);
+  }
+  4.00% {
+    transform: translateX(-3.43vw) 
+               translateY(-2.88vw) 
+               translateZ(-2.06vw)
+               rotateX(-14.11deg)
+               rotateY(-21.85deg)
+               rotateZ(-20.94deg);
+  }
+  6.00% {
+    transform: translateX(-5.13vw) 
+               translateY(-4.30vw) 
+               translateZ(-3.09vw)
+               rotateX(-21.10deg)
+               rotateY(-32.67deg)
+               rotateZ(-31.31deg);
+  }
+  8.00% {
+    transform: translateX(-6.81vw) 
+               translateY(-5.71vw) 
+               translateZ(-4.10vw)
+               rotateX(-28.01deg)
+               rotateY(-43.35deg)
+               rotateZ(-41.56deg);
+  }
+  10.00% {
+    transform: translateX(-8.47vw) 
+               translateY(-7.09vw) 
+               translateZ(-5.09vw)
+               rotateX(-34.80deg)
+               rotateY(-53.87deg)
+               rotateZ(-51.64deg);
+  }
+  12.00% {
+    transform: translateX(-10.09vw) 
+               translateY(-8.45vw) 
+               translateZ(-6.06vw)
+               rotateX(-41.46deg)
+               rotateY(-64.18deg)
+               rotateZ(-61.51deg);
+  }
+  14.00% {
+    transform: translateX(-11.67vw) 
+               translateY(-9.78vw) 
+               translateZ(-7.01vw)
+               rotateX(-47.95deg)
+               rotateY(-74.23deg)
+               rotateZ(-71.15deg);
+  }
+  16.00% {
+    transform: translateX(-13.20vw) 
+               translateY(-11.06vw) 
+               translateZ(-7.93vw)
+               rotateX(-54.25deg)
+               rotateY(-83.99deg)
+               rotateZ(-80.50deg);
+  }
+  18.00% {
+    transform: translateX(-14.68vw) 
+               translateY(-12.30vw) 
+               translateZ(-8.82vw)
+               rotateX(-60.34deg)
+               rotateY(-93.41deg)
+               rotateZ(-89.54deg);
+  }
+  20.00% {
+    transform: translateX(-16.11vw) 
+               translateY(-13.49vw) 
+               translateZ(-9.68vw)
+               rotateX(-66.19deg)
+               rotateY(-102.47deg)
+               rotateZ(-98.22deg);
+  }
+  22.00% {
+    transform: translateX(-17.47vw) 
+               translateY(-14.63vw) 
+               translateZ(-10.50vw)
+               rotateX(-71.78deg)
+               rotateY(-111.12deg)
+               rotateZ(-106.51deg);
+  }
+  24.00% {
+    transform: translateX(-18.76vw) 
+               translateY(-15.72vw) 
+               translateZ(-11.27vw)
+               rotateX(-77.09deg)
+               rotateY(-119.34deg)
+               rotateZ(-114.39deg);
+  }
+  26.00% {
+    transform: translateX(-19.97vw) 
+               translateY(-16.74vw) 
+               translateZ(-12.01vw)
+               rotateX(-82.09deg)
+               rotateY(-127.08deg)
+               rotateZ(-121.81deg);
+  }
+  28.00% {
+    transform: translateX(-21.11vw) 
+               translateY(-17.69vw) 
+               translateZ(-12.69vw)
+               rotateX(-86.77deg)
+               rotateY(-134.33deg)
+               rotateZ(-128.75deg);
+  }
+  30.00% {
+    transform: translateX(-22.17vw) 
+               translateY(-18.57vw) 
+               translateZ(-13.32vw)
+               rotateX(-91.11deg)
+               rotateY(-141.04deg)
+               rotateZ(-135.19deg);
+  }
+  32.00% {
+    transform: translateX(-23.14vw) 
+               translateY(-19.38vw) 
+               translateZ(-13.91vw)
+               rotateX(-95.08deg)
+               rotateY(-147.19deg)
+               rotateZ(-141.09deg);
+  }
+  34.00% {
+    transform: translateX(-24.01vw) 
+               translateY(-20.12vw) 
+               translateZ(-14.43vw)
+               rotateX(-98.69deg)
+               rotateY(-152.77deg)
+               rotateZ(-146.43deg);
+  }
+  36.00% {
+    transform: translateX(-24.79vw) 
+               translateY(-20.77vw) 
+               translateZ(-14.90vw)
+               rotateX(-101.90deg)
+               rotateY(-157.74deg)
+               rotateZ(-151.20deg);
+  }
+  38.00% {
+    transform: translateX(-25.48vw) 
+               translateY(-21.35vw) 
+               translateZ(-15.31vw)
+               rotateX(-104.71deg)
+               rotateY(-162.09deg)
+               rotateZ(-155.37deg);
+  }
+  40.00% {
+    transform: translateX(-26.06vw) 
+               translateY(-21.83vw) 
+               translateZ(-15.66vw)
+               rotateX(-107.10deg)
+               rotateY(-165.80deg)
+               rotateZ(-158.92deg);
+  }
+  42.00% {
+    transform: translateX(-26.54vw) 
+               translateY(-22.24vw) 
+               translateZ(-15.95vw)
+               rotateX(-109.08deg)
+               rotateY(-168.86deg)
+               rotateZ(-161.85deg);
+  }
+  44.00% {
+    transform: translateX(-26.92vw) 
+               translateY(-22.55vw) 
+               translateZ(-16.18vw)
+               rotateX(-110.62deg)
+               rotateY(-171.24deg)
+               rotateZ(-164.14deg);
+  }
+  46.00% {
+    transform: translateX(-27.19vw) 
+               translateY(-22.78vw) 
+               translateZ(-16.34vw)
+               rotateX(-111.73deg)
+               rotateY(-172.96deg)
+               rotateZ(-165.78deg);
+  }
+  48.00% {
+    transform: translateX(-27.35vw) 
+               translateY(-22.91vw) 
+               translateZ(-16.44vw)
+               rotateX(-112.39deg)
+               rotateY(-173.99deg)
+               rotateZ(-166.77deg);
+  }
+  50.00% {
+    transform: translateX(-27.40vw) 
+               translateY(-22.96vw) 
+               translateZ(-16.47vw)
+               rotateX(-112.62deg)
+               rotateY(-174.33deg)
+               rotateZ(-167.10deg);
+  }
+  52.00% {
+    transform: translateX(-27.35vw) 
+               translateY(-22.91vw) 
+               translateZ(-16.44vw)
+               rotateX(-112.39deg)
+               rotateY(-173.99deg)
+               rotateZ(-166.77deg);
+  }
+  54.00% {
+    transform: translateX(-27.19vw) 
+               translateY(-22.78vw) 
+               translateZ(-16.34vw)
+               rotateX(-111.73deg)
+               rotateY(-172.96deg)
+               rotateZ(-165.78deg);
+  }
+  56.00% {
+    transform: translateX(-26.92vw) 
+               translateY(-22.55vw) 
+               translateZ(-16.18vw)
+               rotateX(-110.62deg)
+               rotateY(-171.24deg)
+               rotateZ(-164.14deg);
+  }
+  58.00% {
+    transform: translateX(-26.54vw) 
+               translateY(-22.24vw) 
+               translateZ(-15.95vw)
+               rotateX(-109.08deg)
+               rotateY(-168.86deg)
+               rotateZ(-161.85deg);
+  }
+  60.00% {
+    transform: translateX(-26.06vw) 
+               translateY(-21.83vw) 
+               translateZ(-15.66vw)
+               rotateX(-107.10deg)
+               rotateY(-165.80deg)
+               rotateZ(-158.92deg);
+  }
+  62.00% {
+    transform: translateX(-25.48vw) 
+               translateY(-21.35vw) 
+               translateZ(-15.31vw)
+               rotateX(-104.71deg)
+               rotateY(-162.09deg)
+               rotateZ(-155.37deg);
+  }
+  64.00% {
+    transform: translateX(-24.79vw) 
+               translateY(-20.77vw) 
+               translateZ(-14.90vw)
+               rotateX(-101.90deg)
+               rotateY(-157.74deg)
+               rotateZ(-151.20deg);
+  }
+  66.00% {
+    transform: translateX(-24.01vw) 
+               translateY(-20.12vw) 
+               translateZ(-14.43vw)
+               rotateX(-98.69deg)
+               rotateY(-152.77deg)
+               rotateZ(-146.43deg);
+  }
+  68.00% {
+    transform: translateX(-23.14vw) 
+               translateY(-19.38vw) 
+               translateZ(-13.91vw)
+               rotateX(-95.08deg)
+               rotateY(-147.19deg)
+               rotateZ(-141.09deg);
+  }
+  70.00% {
+    transform: translateX(-22.17vw) 
+               translateY(-18.57vw) 
+               translateZ(-13.32vw)
+               rotateX(-91.11deg)
+               rotateY(-141.04deg)
+               rotateZ(-135.19deg);
+  }
+  72.00% {
+    transform: translateX(-21.11vw) 
+               translateY(-17.69vw) 
+               translateZ(-12.69vw)
+               rotateX(-86.77deg)
+               rotateY(-134.33deg)
+               rotateZ(-128.75deg);
+  }
+  74.00% {
+    transform: translateX(-19.97vw) 
+               translateY(-16.74vw) 
+               translateZ(-12.01vw)
+               rotateX(-82.09deg)
+               rotateY(-127.08deg)
+               rotateZ(-121.81deg);
+  }
+  76.00% {
+    transform: translateX(-18.76vw) 
+               translateY(-15.72vw) 
+               translateZ(-11.27vw)
+               rotateX(-77.09deg)
+               rotateY(-119.34deg)
+               rotateZ(-114.39deg);
+  }
+  78.00% {
+    transform: translateX(-17.47vw) 
+               translateY(-14.63vw) 
+               translateZ(-10.50vw)
+               rotateX(-71.78deg)
+               rotateY(-111.12deg)
+               rotateZ(-106.51deg);
+  }
+  80.00% {
+    transform: translateX(-16.11vw) 
+               translateY(-13.49vw) 
+               translateZ(-9.68vw)
+               rotateX(-66.19deg)
+               rotateY(-102.47deg)
+               rotateZ(-98.22deg);
+  }
+  82.00% {
+    transform: translateX(-14.68vw) 
+               translateY(-12.30vw) 
+               translateZ(-8.82vw)
+               rotateX(-60.34deg)
+               rotateY(-93.41deg)
+               rotateZ(-89.54deg);
+  }
+  84.00% {
+    transform: translateX(-13.20vw) 
+               translateY(-11.06vw) 
+               translateZ(-7.93vw)
+               rotateX(-54.25deg)
+               rotateY(-83.99deg)
+               rotateZ(-80.50deg);
+  }
+  86.00% {
+    transform: translateX(-11.67vw) 
+               translateY(-9.78vw) 
+               translateZ(-7.01vw)
+               rotateX(-47.95deg)
+               rotateY(-74.23deg)
+               rotateZ(-71.15deg);
+  }
+  88.00% {
+    transform: translateX(-10.09vw) 
+               translateY(-8.45vw) 
+               translateZ(-6.06vw)
+               rotateX(-41.46deg)
+               rotateY(-64.18deg)
+               rotateZ(-61.51deg);
+  }
+  90.00% {
+    transform: translateX(-8.47vw) 
+               translateY(-7.09vw) 
+               translateZ(-5.09vw)
+               rotateX(-34.80deg)
+               rotateY(-53.87deg)
+               rotateZ(-51.64deg);
+  }
+  92.00% {
+    transform: translateX(-6.81vw) 
+               translateY(-5.71vw) 
+               translateZ(-4.10vw)
+               rotateX(-28.01deg)
+               rotateY(-43.35deg)
+               rotateZ(-41.56deg);
+  }
+  94.00% {
+    transform: translateX(-5.13vw) 
+               translateY(-4.30vw) 
+               translateZ(-3.09vw)
+               rotateX(-21.10deg)
+               rotateY(-32.67deg)
+               rotateZ(-31.31deg);
+  }
+  96.00% {
+    transform: translateX(-3.43vw) 
+               translateY(-2.88vw) 
+               translateZ(-2.06vw)
+               rotateX(-14.11deg)
+               rotateY(-21.85deg)
+               rotateZ(-20.94deg);
+  }
+  98.00% {
+    transform: translateX(-1.72vw) 
+               translateY(-1.44vw) 
+               translateZ(-1.03vw)
+               rotateX(-7.07deg)
+               rotateY(-10.95deg)
+               rotateZ(-10.49deg);
+  }
+  100.00% {
+    transform: translateX(-0.00vw) 
+               translateY(-0.00vw) 
+               translateZ(-0.00vw)
+               rotateX(-0.00deg)
+               rotateY(-0.00deg)
+               rotateZ(-0.00deg);
+  }
+}
+
+@keyframes plane1Animation {
+  0.00% {
+    transform: translateX(0.00vw) 
+               translateY(0.00vw) 
+               translateZ(3.13vw)
+               rotateX(0.00deg)
+               rotateY(0.00deg)
+               rotateZ(0.00deg);
+  }
+  2.00% {
+    transform: translateX(-1.72vw) 
+               translateY(-2.70vw) 
+               translateZ(2.89vw)
+               rotateX(17.46deg)
+               rotateY(12.48deg)
+               rotateZ(6.65deg);
+  }
+  4.00% {
+    transform: translateX(-3.43vw) 
+               translateY(-5.40vw) 
+               translateZ(2.65vw)
+               rotateX(34.86deg)
+               rotateY(24.90deg)
+               rotateZ(13.28deg);
+  }
+  6.00% {
+    transform: translateX(-5.13vw) 
+               translateY(-8.07vw) 
+               translateZ(2.41vw)
+               rotateX(52.12deg)
+               rotateY(37.23deg)
+               rotateZ(19.85deg);
+  }
+  8.00% {
+    transform: translateX(-6.81vw) 
+               translateY(-10.71vw) 
+               translateZ(2.18vw)
+               rotateX(69.17deg)
+               rotateY(49.41deg)
+               rotateZ(26.35deg);
+  }
+  10.00% {
+    transform: translateX(-8.47vw) 
+               translateY(-13.30vw) 
+               translateZ(1.95vw)
+               rotateX(85.95deg)
+               rotateY(61.40deg)
+               rotateZ(32.74deg);
+  }
+  12.00% {
+    transform: translateX(-10.09vw) 
+               translateY(-15.85vw) 
+               translateZ(1.73vw)
+               rotateX(102.39deg)
+               rotateY(73.15deg)
+               rotateZ(39.01deg);
+  }
+  14.00% {
+    transform: translateX(-11.67vw) 
+               translateY(-18.33vw) 
+               translateZ(1.51vw)
+               rotateX(118.43deg)
+               rotateY(84.60deg)
+               rotateZ(45.11deg);
+  }
+  16.00% {
+    transform: translateX(-13.20vw) 
+               translateY(-20.74vw) 
+               translateZ(1.29vw)
+               rotateX(134.00deg)
+               rotateY(95.72deg)
+               rotateZ(51.05deg);
+  }
+  18.00% {
+    transform: translateX(-14.68vw) 
+               translateY(-23.07vw) 
+               translateZ(1.09vw)
+               rotateX(149.04deg)
+               rotateY(106.47deg)
+               rotateZ(56.78deg);
+  }
+  20.00% {
+    transform: translateX(-16.10vw) 
+               translateY(-25.30vw) 
+               translateZ(0.89vw)
+               rotateX(163.49deg)
+               rotateY(116.79deg)
+               rotateZ(62.28deg);
+  }
+  22.00% {
+    transform: translateX(-17.46vw) 
+               translateY(-27.44vw) 
+               translateZ(0.70vw)
+               rotateX(177.30deg)
+               rotateY(126.65deg)
+               rotateZ(67.54deg);
+  }
+  24.00% {
+    transform: translateX(-18.75vw) 
+               translateY(-29.47vw) 
+               translateZ(0.52vw)
+               rotateX(190.40deg)
+               rotateY(136.02deg)
+               rotateZ(72.53deg);
+  }
+  26.00% {
+    transform: translateX(-19.97vw) 
+               translateY(-31.38vw) 
+               translateZ(0.35vw)
+               rotateX(202.76deg)
+               rotateY(144.84deg)
+               rotateZ(77.24deg);
+  }
+  28.00% {
+    transform: translateX(-21.11vw) 
+               translateY(-33.17vw) 
+               translateZ(0.20vw)
+               rotateX(214.32deg)
+               rotateY(153.10deg)
+               rotateZ(81.64deg);
+  }
+  30.00% {
+    transform: translateX(-22.16vw) 
+               translateY(-34.83vw) 
+               translateZ(0.05vw)
+               rotateX(225.03deg)
+               rotateY(160.75deg)
+               rotateZ(85.72deg);
+  }
+  32.00% {
+    transform: translateX(-23.13vw) 
+               translateY(-36.35vw) 
+               translateZ(-0.09vw)
+               rotateX(234.85deg)
+               rotateY(167.77deg)
+               rotateZ(89.46deg);
+  }
+  34.00% {
+    transform: translateX(-24.01vw) 
+               translateY(-37.73vw) 
+               translateZ(-0.21vw)
+               rotateX(243.74deg)
+               rotateY(174.12deg)
+               rotateZ(92.85deg);
+  }
+  36.00% {
+    transform: translateX(-24.79vw) 
+               translateY(-38.95vw) 
+               translateZ(-0.32vw)
+               rotateX(251.67deg)
+               rotateY(179.79deg)
+               rotateZ(95.87deg);
+  }
+  38.00% {
+    transform: translateX(-25.47vw) 
+               translateY(-40.03vw) 
+               translateZ(-0.41vw)
+               rotateX(258.61deg)
+               rotateY(184.74deg)
+               rotateZ(98.52deg);
+  }
+  40.00% {
+    transform: translateX(-26.06vw) 
+               translateY(-40.94vw) 
+               translateZ(-0.49vw)
+               rotateX(264.53deg)
+               rotateY(188.97deg)
+               rotateZ(100.77deg);
+  }
+  42.00% {
+    transform: translateX(-26.54vw) 
+               translateY(-41.70vw) 
+               translateZ(-0.56vw)
+               rotateX(269.41deg)
+               rotateY(192.45deg)
+               rotateZ(102.63deg);
+  }
+  44.00% {
+    transform: translateX(-26.91vw) 
+               translateY(-42.29vw) 
+               translateZ(-0.61vw)
+               rotateX(273.22deg)
+               rotateY(195.18deg)
+               rotateZ(104.08deg);
+  }
+  46.00% {
+    transform: translateX(-27.18vw) 
+               translateY(-42.71vw) 
+               translateZ(-0.65vw)
+               rotateX(275.95deg)
+               rotateY(197.13deg)
+               rotateZ(105.12deg);
+  }
+  48.00% {
+    transform: translateX(-27.34vw) 
+               translateY(-42.97vw) 
+               translateZ(-0.67vw)
+               rotateX(277.60deg)
+               rotateY(198.31deg)
+               rotateZ(105.75deg);
+  }
+  50.00% {
+    transform: translateX(-27.40vw) 
+               translateY(-43.05vw) 
+               translateZ(-0.68vw)
+               rotateX(278.15deg)
+               rotateY(198.70deg)
+               rotateZ(105.96deg);
+  }
+  52.00% {
+    transform: translateX(-27.34vw) 
+               translateY(-42.97vw) 
+               translateZ(-0.67vw)
+               rotateX(277.60deg)
+               rotateY(198.31deg)
+               rotateZ(105.75deg);
+  }
+  54.00% {
+    transform: translateX(-27.18vw) 
+               translateY(-42.71vw) 
+               translateZ(-0.65vw)
+               rotateX(275.95deg)
+               rotateY(197.13deg)
+               rotateZ(105.12deg);
+  }
+  56.00% {
+    transform: translateX(-26.91vw) 
+               translateY(-42.29vw) 
+               translateZ(-0.61vw)
+               rotateX(273.22deg)
+               rotateY(195.18deg)
+               rotateZ(104.08deg);
+  }
+  58.00% {
+    transform: translateX(-26.54vw) 
+               translateY(-41.70vw) 
+               translateZ(-0.56vw)
+               rotateX(269.41deg)
+               rotateY(192.45deg)
+               rotateZ(102.63deg);
+  }
+  60.00% {
+    transform: translateX(-26.06vw) 
+               translateY(-40.94vw) 
+               translateZ(-0.49vw)
+               rotateX(264.53deg)
+               rotateY(188.97deg)
+               rotateZ(100.77deg);
+  }
+  62.00% {
+    transform: translateX(-25.47vw) 
+               translateY(-40.03vw) 
+               translateZ(-0.41vw)
+               rotateX(258.61deg)
+               rotateY(184.74deg)
+               rotateZ(98.52deg);
+  }
+  64.00% {
+    transform: translateX(-24.79vw) 
+               translateY(-38.95vw) 
+               translateZ(-0.32vw)
+               rotateX(251.67deg)
+               rotateY(179.79deg)
+               rotateZ(95.87deg);
+  }
+  66.00% {
+    transform: translateX(-24.01vw) 
+               translateY(-37.73vw) 
+               translateZ(-0.21vw)
+               rotateX(243.74deg)
+               rotateY(174.12deg)
+               rotateZ(92.85deg);
+  }
+  68.00% {
+    transform: translateX(-23.13vw) 
+               translateY(-36.35vw) 
+               translateZ(-0.09vw)
+               rotateX(234.85deg)
+               rotateY(167.77deg)
+               rotateZ(89.46deg);
+  }
+  70.00% {
+    transform: translateX(-22.16vw) 
+               translateY(-34.83vw) 
+               translateZ(0.05vw)
+               rotateX(225.03deg)
+               rotateY(160.75deg)
+               rotateZ(85.72deg);
+  }
+  72.00% {
+    transform: translateX(-21.11vw) 
+               translateY(-33.17vw) 
+               translateZ(0.20vw)
+               rotateX(214.32deg)
+               rotateY(153.10deg)
+               rotateZ(81.64deg);
+  }
+  74.00% {
+    transform: translateX(-19.97vw) 
+               translateY(-31.38vw) 
+               translateZ(0.35vw)
+               rotateX(202.76deg)
+               rotateY(144.84deg)
+               rotateZ(77.24deg);
+  }
+  76.00% {
+    transform: translateX(-18.75vw) 
+               translateY(-29.47vw) 
+               translateZ(0.52vw)
+               rotateX(190.40deg)
+               rotateY(136.02deg)
+               rotateZ(72.53deg);
+  }
+  78.00% {
+    transform: translateX(-17.46vw) 
+               translateY(-27.44vw) 
+               translateZ(0.70vw)
+               rotateX(177.30deg)
+               rotateY(126.65deg)
+               rotateZ(67.54deg);
+  }
+  80.00% {
+    transform: translateX(-16.10vw) 
+               translateY(-25.30vw) 
+               translateZ(0.89vw)
+               rotateX(163.49deg)
+               rotateY(116.79deg)
+               rotateZ(62.28deg);
+  }
+  82.00% {
+    transform: translateX(-14.68vw) 
+               translateY(-23.07vw) 
+               translateZ(1.09vw)
+               rotateX(149.04deg)
+               rotateY(106.47deg)
+               rotateZ(56.78deg);
+  }
+  84.00% {
+    transform: translateX(-13.20vw) 
+               translateY(-20.74vw) 
+               translateZ(1.29vw)
+               rotateX(134.00deg)
+               rotateY(95.72deg)
+               rotateZ(51.05deg);
+  }
+  86.00% {
+    transform: translateX(-11.67vw) 
+               translateY(-18.33vw) 
+               translateZ(1.51vw)
+               rotateX(118.43deg)
+               rotateY(84.60deg)
+               rotateZ(45.11deg);
+  }
+  88.00% {
+    transform: translateX(-10.09vw) 
+               translateY(-15.85vw) 
+               translateZ(1.73vw)
+               rotateX(102.39deg)
+               rotateY(73.15deg)
+               rotateZ(39.01deg);
+  }
+  90.00% {
+    transform: translateX(-8.47vw) 
+               translateY(-13.30vw) 
+               translateZ(1.95vw)
+               rotateX(85.95deg)
+               rotateY(61.40deg)
+               rotateZ(32.74deg);
+  }
+  92.00% {
+    transform: translateX(-6.81vw) 
+               translateY(-10.71vw) 
+               translateZ(2.18vw)
+               rotateX(69.17deg)
+               rotateY(49.41deg)
+               rotateZ(26.35deg);
+  }
+  94.00% {
+    transform: translateX(-5.13vw) 
+               translateY(-8.07vw) 
+               translateZ(2.41vw)
+               rotateX(52.12deg)
+               rotateY(37.23deg)
+               rotateZ(19.85deg);
+  }
+  96.00% {
+    transform: translateX(-3.43vw) 
+               translateY(-5.40vw) 
+               translateZ(2.65vw)
+               rotateX(34.86deg)
+               rotateY(24.90deg)
+               rotateZ(13.28deg);
+  }
+  98.00% {
+    transform: translateX(-1.72vw) 
+               translateY(-2.70vw) 
+               translateZ(2.89vw)
+               rotateX(17.46deg)
+               rotateY(12.48deg)
+               rotateZ(6.65deg);
+  }
+  100.00% {
+    transform: translateX(-0.00vw) 
+               translateY(-0.00vw) 
+               translateZ(3.12vw)
+               rotateX(0.00deg)
+               rotateY(0.00deg)
+               rotateZ(0.00deg);
+  }
+}
+
+@keyframes plane2Animation {
+  0.00% {
+    transform: translateX(0.00vw) 
+               translateY(0.00vw) 
+               translateZ(6.25vw)
+               rotateX(0.00deg)
+               rotateY(0.00deg)
+               rotateZ(0.00deg);
+  }
+  2.00% {
+    transform: translateX(-0.07vw) 
+               translateY(1.02vw) 
+               translateZ(7.30vw)
+               rotateX(3.39deg)
+               rotateY(14.35deg)
+               rotateZ(-14.24deg);
+  }
+  4.00% {
+    transform: translateX(-0.14vw) 
+               translateY(2.04vw) 
+               translateZ(8.34vw)
+               rotateX(6.77deg)
+               rotateY(28.65deg)
+               rotateZ(-28.42deg);
+  }
+  6.00% {
+    transform: translateX(-0.21vw) 
+               translateY(3.05vw) 
+               translateZ(9.37vw)
+               rotateX(10.12deg)
+               rotateY(42.83deg)
+               rotateZ(-42.49deg);
+  }
+  8.00% {
+    transform: translateX(-0.27vw) 
+               translateY(4.05vw) 
+               translateZ(10.39vw)
+               rotateX(13.43deg)
+               rotateY(56.84deg)
+               rotateZ(-56.39deg);
+  }
+  10.00% {
+    transform: translateX(-0.34vw) 
+               translateY(5.03vw) 
+               translateZ(11.39vw)
+               rotateX(16.69deg)
+               rotateY(70.63deg)
+               rotateZ(-70.07deg);
+  }
+  12.00% {
+    transform: translateX(-0.41vw) 
+               translateY(5.99vw) 
+               translateZ(12.38vw)
+               rotateX(19.88deg)
+               rotateY(84.14deg)
+               rotateZ(-83.48deg);
+  }
+  14.00% {
+    transform: translateX(-0.47vw) 
+               translateY(6.93vw) 
+               translateZ(13.34vw)
+               rotateX(22.99deg)
+               rotateY(97.32deg)
+               rotateZ(-96.55deg);
+  }
+  16.00% {
+    transform: translateX(-0.53vw) 
+               translateY(7.84vw) 
+               translateZ(14.27vw)
+               rotateX(26.01deg)
+               rotateY(110.11deg)
+               rotateZ(-109.24deg);
+  }
+  18.00% {
+    transform: translateX(-0.59vw) 
+               translateY(8.72vw) 
+               translateZ(15.17vw)
+               rotateX(28.93deg)
+               rotateY(122.47deg)
+               rotateZ(-121.50deg);
+  }
+  20.00% {
+    transform: translateX(-0.65vw) 
+               translateY(9.56vw) 
+               translateZ(16.03vw)
+               rotateX(31.74deg)
+               rotateY(134.34deg)
+               rotateZ(-133.29deg);
+  }
+  22.00% {
+    transform: translateX(-0.70vw) 
+               translateY(10.37vw) 
+               translateZ(16.86vw)
+               rotateX(34.42deg)
+               rotateY(145.69deg)
+               rotateZ(-144.54deg);
+  }
+  24.00% {
+    transform: translateX(-0.76vw) 
+               translateY(11.14vw) 
+               translateZ(17.65vw)
+               rotateX(36.97deg)
+               rotateY(156.46deg)
+               rotateZ(-155.23deg);
+  }
+  26.00% {
+    transform: translateX(-0.81vw) 
+               translateY(11.86vw) 
+               translateZ(18.38vw)
+               rotateX(39.36deg)
+               rotateY(166.61deg)
+               rotateZ(-165.30deg);
+  }
+  28.00% {
+    transform: translateX(-0.85vw) 
+               translateY(12.53vw) 
+               translateZ(19.08vw)
+               rotateX(41.61deg)
+               rotateY(176.11deg)
+               rotateZ(-174.72deg);
+  }
+  30.00% {
+    transform: translateX(-0.89vw) 
+               translateY(13.16vw) 
+               translateZ(19.72vw)
+               rotateX(43.69deg)
+               rotateY(184.91deg)
+               rotateZ(-183.45deg);
+  }
+  32.00% {
+    transform: translateX(-0.93vw) 
+               translateY(13.74vw) 
+               translateZ(20.30vw)
+               rotateX(45.59deg)
+               rotateY(192.98deg)
+               rotateZ(-191.46deg);
+  }
+  34.00% {
+    transform: translateX(-0.97vw) 
+               translateY(14.26vw) 
+               translateZ(20.84vw)
+               rotateX(47.32deg)
+               rotateY(200.29deg)
+               rotateZ(-198.71deg);
+  }
+  36.00% {
+    transform: translateX(-1.00vw) 
+               translateY(14.72vw) 
+               translateZ(21.31vw)
+               rotateX(48.86deg)
+               rotateY(206.81deg)
+               rotateZ(-205.18deg);
+  }
+  38.00% {
+    transform: translateX(-1.03vw) 
+               translateY(15.13vw) 
+               translateZ(21.73vw)
+               rotateX(50.21deg)
+               rotateY(212.51deg)
+               rotateZ(-210.84deg);
+  }
+  40.00% {
+    transform: translateX(-1.05vw) 
+               translateY(15.47vw) 
+               translateZ(22.08vw)
+               rotateX(51.36deg)
+               rotateY(217.37deg)
+               rotateZ(-215.66deg);
+  }
+  42.00% {
+    transform: translateX(-1.07vw) 
+               translateY(15.76vw) 
+               translateZ(22.37vw)
+               rotateX(52.30deg)
+               rotateY(221.38deg)
+               rotateZ(-219.64deg);
+  }
+  44.00% {
+    transform: translateX(-1.09vw) 
+               translateY(15.98vw) 
+               translateZ(22.60vw)
+               rotateX(53.04deg)
+               rotateY(224.51deg)
+               rotateZ(-222.74deg);
+  }
+  46.00% {
+    transform: translateX(-1.10vw) 
+               translateY(16.14vw) 
+               translateZ(22.77vw)
+               rotateX(53.57deg)
+               rotateY(226.76deg)
+               rotateZ(-224.97deg);
+  }
+  48.00% {
+    transform: translateX(-1.10vw) 
+               translateY(16.24vw) 
+               translateZ(22.86vw)
+               rotateX(53.89deg)
+               rotateY(228.11deg)
+               rotateZ(-226.31deg);
+  }
+  50.00% {
+    transform: translateX(-1.10vw) 
+               translateY(16.27vw) 
+               translateZ(22.90vw)
+               rotateX(54.00deg)
+               rotateY(228.56deg)
+               rotateZ(-226.76deg);
+  }
+  52.00% {
+    transform: translateX(-1.10vw) 
+               translateY(16.24vw) 
+               translateZ(22.86vw)
+               rotateX(53.89deg)
+               rotateY(228.11deg)
+               rotateZ(-226.31deg);
+  }
+  54.00% {
+    transform: translateX(-1.10vw) 
+               translateY(16.14vw) 
+               translateZ(22.77vw)
+               rotateX(53.57deg)
+               rotateY(226.76deg)
+               rotateZ(-224.97deg);
+  }
+  56.00% {
+    transform: translateX(-1.09vw) 
+               translateY(15.98vw) 
+               translateZ(22.60vw)
+               rotateX(53.04deg)
+               rotateY(224.51deg)
+               rotateZ(-222.74deg);
+  }
+  58.00% {
+    transform: translateX(-1.07vw) 
+               translateY(15.76vw) 
+               translateZ(22.37vw)
+               rotateX(52.30deg)
+               rotateY(221.38deg)
+               rotateZ(-219.64deg);
+  }
+  60.00% {
+    transform: translateX(-1.05vw) 
+               translateY(15.47vw) 
+               translateZ(22.08vw)
+               rotateX(51.36deg)
+               rotateY(217.37deg)
+               rotateZ(-215.66deg);
+  }
+  62.00% {
+    transform: translateX(-1.03vw) 
+               translateY(15.13vw) 
+               translateZ(21.73vw)
+               rotateX(50.21deg)
+               rotateY(212.51deg)
+               rotateZ(-210.84deg);
+  }
+  64.00% {
+    transform: translateX(-1.00vw) 
+               translateY(14.72vw) 
+               translateZ(21.31vw)
+               rotateX(48.86deg)
+               rotateY(206.81deg)
+               rotateZ(-205.18deg);
+  }
+  66.00% {
+    transform: translateX(-0.97vw) 
+               translateY(14.26vw) 
+               translateZ(20.84vw)
+               rotateX(47.32deg)
+               rotateY(200.29deg)
+               rotateZ(-198.71deg);
+  }
+  68.00% {
+    transform: translateX(-0.93vw) 
+               translateY(13.74vw) 
+               translateZ(20.30vw)
+               rotateX(45.59deg)
+               rotateY(192.98deg)
+               rotateZ(-191.46deg);
+  }
+  70.00% {
+    transform: translateX(-0.89vw) 
+               translateY(13.16vw) 
+               translateZ(19.72vw)
+               rotateX(43.69deg)
+               rotateY(184.91deg)
+               rotateZ(-183.45deg);
+  }
+  72.00% {
+    transform: translateX(-0.85vw) 
+               translateY(12.53vw) 
+               translateZ(19.08vw)
+               rotateX(41.61deg)
+               rotateY(176.11deg)
+               rotateZ(-174.72deg);
+  }
+  74.00% {
+    transform: translateX(-0.81vw) 
+               translateY(11.86vw) 
+               translateZ(18.38vw)
+               rotateX(39.36deg)
+               rotateY(166.61deg)
+               rotateZ(-165.30deg);
+  }
+  76.00% {
+    transform: translateX(-0.76vw) 
+               translateY(11.14vw) 
+               translateZ(17.65vw)
+               rotateX(36.97deg)
+               rotateY(156.46deg)
+               rotateZ(-155.23deg);
+  }
+  78.00% {
+    transform: translateX(-0.70vw) 
+               translateY(10.37vw) 
+               translateZ(16.86vw)
+               rotateX(34.42deg)
+               rotateY(145.69deg)
+               rotateZ(-144.54deg);
+  }
+  80.00% {
+    transform: translateX(-0.65vw) 
+               translateY(9.56vw) 
+               translateZ(16.03vw)
+               rotateX(31.74deg)
+               rotateY(134.34deg)
+               rotateZ(-133.29deg);
+  }
+  82.00% {
+    transform: translateX(-0.59vw) 
+               translateY(8.72vw) 
+               translateZ(15.17vw)
+               rotateX(28.93deg)
+               rotateY(122.47deg)
+               rotateZ(-121.50deg);
+  }
+  84.00% {
+    transform: translateX(-0.53vw) 
+               translateY(7.84vw) 
+               translateZ(14.27vw)
+               rotateX(26.01deg)
+               rotateY(110.11deg)
+               rotateZ(-109.24deg);
+  }
+  86.00% {
+    transform: translateX(-0.47vw) 
+               translateY(6.93vw) 
+               translateZ(13.34vw)
+               rotateX(22.99deg)
+               rotateY(97.32deg)
+               rotateZ(-96.55deg);
+  }
+  88.00% {
+    transform: translateX(-0.41vw) 
+               translateY(5.99vw) 
+               translateZ(12.38vw)
+               rotateX(19.88deg)
+               rotateY(84.14deg)
+               rotateZ(-83.48deg);
+  }
+  90.00% {
+    transform: translateX(-0.34vw) 
+               translateY(5.03vw) 
+               translateZ(11.39vw)
+               rotateX(16.69deg)
+               rotateY(70.63deg)
+               rotateZ(-70.07deg);
+  }
+  92.00% {
+    transform: translateX(-0.27vw) 
+               translateY(4.05vw) 
+               translateZ(10.39vw)
+               rotateX(13.43deg)
+               rotateY(56.84deg)
+               rotateZ(-56.39deg);
+  }
+  94.00% {
+    transform: translateX(-0.21vw) 
+               translateY(3.05vw) 
+               translateZ(9.37vw)
+               rotateX(10.12deg)
+               rotateY(42.83deg)
+               rotateZ(-42.49deg);
+  }
+  96.00% {
+    transform: translateX(-0.14vw) 
+               translateY(2.04vw) 
+               translateZ(8.34vw)
+               rotateX(6.77deg)
+               rotateY(28.65deg)
+               rotateZ(-28.42deg);
+  }
+  98.00% {
+    transform: translateX(-0.07vw) 
+               translateY(1.02vw) 
+               translateZ(7.30vw)
+               rotateX(3.39deg)
+               rotateY(14.35deg)
+               rotateZ(-14.24deg);
+  }
+  100.00% {
+    transform: translateX(-0.00vw) 
+               translateY(0.00vw) 
+               translateZ(6.25vw)
+               rotateX(0.00deg)
+               rotateY(0.00deg)
+               rotateZ(-0.00deg);
+  }
+}
+
+@keyframes plane3Animation {
+  0.00% {
+    transform: translateX(0.00vw) 
+               translateY(0.00vw) 
+               translateZ(9.38vw)
+               rotateX(0.00deg)
+               rotateY(0.00deg)
+               rotateZ(0.00deg);
+  }
+  2.00% {
+    transform: translateX(-0.83vw) 
+               translateY(2.73vw) 
+               translateZ(10.86vw)
+               rotateX(-3.34deg)
+               rotateY(3.31deg)
+               rotateZ(-0.65deg);
+  }
+  4.00% {
+    transform: translateX(-1.66vw) 
+               translateY(5.44vw) 
+               translateZ(12.34vw)
+               rotateX(-6.67deg)
+               rotateY(6.61deg)
+               rotateZ(-1.31deg);
+  }
+  6.00% {
+    transform: translateX(-2.48vw) 
+               translateY(8.14vw) 
+               translateZ(13.81vw)
+               rotateX(-9.97deg)
+               rotateY(9.88deg)
+               rotateZ(-1.95deg);
+  }
+  8.00% {
+    transform: translateX(-3.29vw) 
+               translateY(10.80vw) 
+               translateZ(15.27vw)
+               rotateX(-13.24deg)
+               rotateY(13.11deg)
+               rotateZ(-2.59deg);
+  }
+  10.00% {
+    transform: translateX(-4.09vw) 
+               translateY(13.42vw) 
+               translateZ(16.70vw)
+               rotateX(-16.45deg)
+               rotateY(16.29deg)
+               rotateZ(-3.22deg);
+  }
+  12.00% {
+    transform: translateX(-4.87vw) 
+               translateY(15.98vw) 
+               translateZ(18.10vw)
+               rotateX(-19.60deg)
+               rotateY(19.41deg)
+               rotateZ(-3.84deg);
+  }
+  14.00% {
+    transform: translateX(-5.63vw) 
+               translateY(18.49vw) 
+               translateZ(19.46vw)
+               rotateX(-22.67deg)
+               rotateY(22.45deg)
+               rotateZ(-4.44deg);
+  }
+  16.00% {
+    transform: translateX(-6.37vw) 
+               translateY(20.92vw) 
+               translateZ(20.79vw)
+               rotateX(-25.64deg)
+               rotateY(25.40deg)
+               rotateZ(-5.02deg);
+  }
+  18.00% {
+    transform: translateX(-7.08vw) 
+               translateY(23.26vw) 
+               translateZ(22.07vw)
+               rotateX(-28.52deg)
+               rotateY(28.25deg)
+               rotateZ(-5.59deg);
+  }
+  20.00% {
+    transform: translateX(-7.77vw) 
+               translateY(25.52vw) 
+               translateZ(23.30vw)
+               rotateX(-31.29deg)
+               rotateY(30.99deg)
+               rotateZ(-6.13deg);
+  }
+  22.00% {
+    transform: translateX(-8.43vw) 
+               translateY(27.67vw) 
+               translateZ(24.47vw)
+               rotateX(-33.93deg)
+               rotateY(33.60deg)
+               rotateZ(-6.65deg);
+  }
+  24.00% {
+    transform: translateX(-9.05vw) 
+               translateY(29.72vw) 
+               translateZ(25.59vw)
+               rotateX(-36.44deg)
+               rotateY(36.09deg)
+               rotateZ(-7.14deg);
+  }
+  26.00% {
+    transform: translateX(-9.64vw) 
+               translateY(31.65vw) 
+               translateZ(26.64vw)
+               rotateX(-38.80deg)
+               rotateY(38.43deg)
+               rotateZ(-7.60deg);
+  }
+  28.00% {
+    transform: translateX(-10.19vw) 
+               translateY(33.45vw) 
+               translateZ(27.63vw)
+               rotateX(-41.02deg)
+               rotateY(40.62deg)
+               rotateZ(-8.04deg);
+  }
+  30.00% {
+    transform: translateX(-10.70vw) 
+               translateY(35.12vw) 
+               translateZ(28.54vw)
+               rotateX(-43.07deg)
+               rotateY(42.65deg)
+               rotateZ(-8.44deg);
+  }
+  32.00% {
+    transform: translateX(-11.16vw) 
+               translateY(36.66vw) 
+               translateZ(29.38vw)
+               rotateX(-44.95deg)
+               rotateY(44.51deg)
+               rotateZ(-8.81deg);
+  }
+  34.00% {
+    transform: translateX(-11.59vw) 
+               translateY(38.05vw) 
+               translateZ(30.13vw)
+               rotateX(-46.65deg)
+               rotateY(46.20deg)
+               rotateZ(-9.14deg);
+  }
+  36.00% {
+    transform: translateX(-11.96vw) 
+               translateY(39.28vw) 
+               translateZ(30.81vw)
+               rotateX(-48.17deg)
+               rotateY(47.70deg)
+               rotateZ(-9.44deg);
+  }
+  38.00% {
+    transform: translateX(-12.29vw) 
+               translateY(40.37vw) 
+               translateZ(31.40vw)
+               rotateX(-49.49deg)
+               rotateY(49.02deg)
+               rotateZ(-9.70deg);
+  }
+  40.00% {
+    transform: translateX(-12.57vw) 
+               translateY(41.29vw) 
+               translateZ(31.90vw)
+               rotateX(-50.63deg)
+               rotateY(50.14deg)
+               rotateZ(-9.92deg);
+  }
+  42.00% {
+    transform: translateX(-12.81vw) 
+               translateY(42.05vw) 
+               translateZ(32.32vw)
+               rotateX(-51.56deg)
+               rotateY(51.06deg)
+               rotateZ(-10.10deg);
+  }
+  44.00% {
+    transform: translateX(-12.99vw) 
+               translateY(42.65vw) 
+               translateZ(32.64vw)
+               rotateX(-52.29deg)
+               rotateY(51.78deg)
+               rotateZ(-10.25deg);
+  }
+  46.00% {
+    transform: translateX(-13.12vw) 
+               translateY(43.07vw) 
+               translateZ(32.88vw)
+               rotateX(-52.81deg)
+               rotateY(52.30deg)
+               rotateZ(-10.35deg);
+  }
+  48.00% {
+    transform: translateX(-13.20vw) 
+               translateY(43.33vw) 
+               translateZ(33.02vw)
+               rotateX(-53.13deg)
+               rotateY(52.61deg)
+               rotateZ(-10.41deg);
+  }
+  50.00% {
+    transform: translateX(-13.22vw) 
+               translateY(43.42vw) 
+               translateZ(33.06vw)
+               rotateX(-53.23deg)
+               rotateY(52.72deg)
+               rotateZ(-10.43deg);
+  }
+  52.00% {
+    transform: translateX(-13.20vw) 
+               translateY(43.33vw) 
+               translateZ(33.02vw)
+               rotateX(-53.13deg)
+               rotateY(52.61deg)
+               rotateZ(-10.41deg);
+  }
+  54.00% {
+    transform: translateX(-13.12vw) 
+               translateY(43.07vw) 
+               translateZ(32.88vw)
+               rotateX(-52.81deg)
+               rotateY(52.30deg)
+               rotateZ(-10.35deg);
+  }
+  56.00% {
+    transform: translateX(-12.99vw) 
+               translateY(42.65vw) 
+               translateZ(32.64vw)
+               rotateX(-52.29deg)
+               rotateY(51.78deg)
+               rotateZ(-10.25deg);
+  }
+  58.00% {
+    transform: translateX(-12.81vw) 
+               translateY(42.05vw) 
+               translateZ(32.32vw)
+               rotateX(-51.56deg)
+               rotateY(51.06deg)
+               rotateZ(-10.10deg);
+  }
+  60.00% {
+    transform: translateX(-12.57vw) 
+               translateY(41.29vw) 
+               translateZ(31.90vw)
+               rotateX(-50.63deg)
+               rotateY(50.14deg)
+               rotateZ(-9.92deg);
+  }
+  62.00% {
+    transform: translateX(-12.29vw) 
+               translateY(40.37vw) 
+               translateZ(31.40vw)
+               rotateX(-49.49deg)
+               rotateY(49.02deg)
+               rotateZ(-9.70deg);
+  }
+  64.00% {
+    transform: translateX(-11.96vw) 
+               translateY(39.28vw) 
+               translateZ(30.81vw)
+               rotateX(-48.17deg)
+               rotateY(47.70deg)
+               rotateZ(-9.44deg);
+  }
+  66.00% {
+    transform: translateX(-11.59vw) 
+               translateY(38.05vw) 
+               translateZ(30.13vw)
+               rotateX(-46.65deg)
+               rotateY(46.20deg)
+               rotateZ(-9.14deg);
+  }
+  68.00% {
+    transform: translateX(-11.16vw) 
+               translateY(36.66vw) 
+               translateZ(29.38vw)
+               rotateX(-44.95deg)
+               rotateY(44.51deg)
+               rotateZ(-8.81deg);
+  }
+  70.00% {
+    transform: translateX(-10.70vw) 
+               translateY(35.12vw) 
+               translateZ(28.54vw)
+               rotateX(-43.07deg)
+               rotateY(42.65deg)
+               rotateZ(-8.44deg);
+  }
+  72.00% {
+    transform: translateX(-10.19vw) 
+               translateY(33.45vw) 
+               translateZ(27.63vw)
+               rotateX(-41.02deg)
+               rotateY(40.62deg)
+               rotateZ(-8.04deg);
+  }
+  74.00% {
+    transform: translateX(-9.64vw) 
+               translateY(31.65vw) 
+               translateZ(26.64vw)
+               rotateX(-38.80deg)
+               rotateY(38.43deg)
+               rotateZ(-7.60deg);
+  }
+  76.00% {
+    transform: translateX(-9.05vw) 
+               translateY(29.72vw) 
+               translateZ(25.59vw)
+               rotateX(-36.44deg)
+               rotateY(36.09deg)
+               rotateZ(-7.14deg);
+  }
+  78.00% {
+    transform: translateX(-8.43vw) 
+               translateY(27.67vw) 
+               translateZ(24.47vw)
+               rotateX(-33.93deg)
+               rotateY(33.60deg)
+               rotateZ(-6.65deg);
+  }
+  80.00% {
+    transform: translateX(-7.77vw) 
+               translateY(25.52vw) 
+               translateZ(23.30vw)
+               rotateX(-31.29deg)
+               rotateY(30.99deg)
+               rotateZ(-6.13deg);
+  }
+  82.00% {
+    transform: translateX(-7.08vw) 
+               translateY(23.26vw) 
+               translateZ(22.07vw)
+               rotateX(-28.52deg)
+               rotateY(28.25deg)
+               rotateZ(-5.59deg);
+  }
+  84.00% {
+    transform: translateX(-6.37vw) 
+               translateY(20.92vw) 
+               translateZ(20.79vw)
+               rotateX(-25.64deg)
+               rotateY(25.40deg)
+               rotateZ(-5.02deg);
+  }
+  86.00% {
+    transform: translateX(-5.63vw) 
+               translateY(18.49vw) 
+               translateZ(19.46vw)
+               rotateX(-22.67deg)
+               rotateY(22.45deg)
+               rotateZ(-4.44deg);
+  }
+  88.00% {
+    transform: translateX(-4.87vw) 
+               translateY(15.98vw) 
+               translateZ(18.10vw)
+               rotateX(-19.60deg)
+               rotateY(19.41deg)
+               rotateZ(-3.84deg);
+  }
+  90.00% {
+    transform: translateX(-4.09vw) 
+               translateY(13.42vw) 
+               translateZ(16.70vw)
+               rotateX(-16.45deg)
+               rotateY(16.29deg)
+               rotateZ(-3.22deg);
+  }
+  92.00% {
+    transform: translateX(-3.29vw) 
+               translateY(10.80vw) 
+               translateZ(15.27vw)
+               rotateX(-13.24deg)
+               rotateY(13.11deg)
+               rotateZ(-2.59deg);
+  }
+  94.00% {
+    transform: translateX(-2.48vw) 
+               translateY(8.14vw) 
+               translateZ(13.81vw)
+               rotateX(-9.97deg)
+               rotateY(9.88deg)
+               rotateZ(-1.95deg);
+  }
+  96.00% {
+    transform: translateX(-1.66vw) 
+               translateY(5.44vw) 
+               translateZ(12.34vw)
+               rotateX(-6.67deg)
+               rotateY(6.61deg)
+               rotateZ(-1.31deg);
+  }
+  98.00% {
+    transform: translateX(-0.83vw) 
+               translateY(2.73vw) 
+               translateZ(10.86vw)
+               rotateX(-3.34deg)
+               rotateY(3.31deg)
+               rotateZ(-0.65deg);
+  }
+  100.00% {
+    transform: translateX(-0.00vw) 
+               translateY(0.00vw) 
+               translateZ(9.38vw)
+               rotateX(-0.00deg)
+               rotateY(0.00deg)
+               rotateZ(-0.00deg);
+  }
+}
+
+@keyframes plane4Animation {
+  0.00% {
+    transform: translateX(0.00vw) 
+               translateY(0.00vw) 
+               translateZ(12.50vw)
+               rotateX(0.00deg)
+               rotateY(0.00deg)
+               rotateZ(0.00deg);
+  }
+  2.00% {
+    transform: translateX(-2.13vw) 
+               translateY(0.39vw) 
+               translateZ(11.39vw)
+               rotateX(-20.62deg)
+               rotateY(-14.42deg)
+               rotateZ(13.74deg);
+  }
+  4.00% {
+    transform: translateX(-4.24vw) 
+               translateY(0.79vw) 
+               translateZ(10.29vw)
+               rotateX(-41.15deg)
+               rotateY(-28.79deg)
+               rotateZ(27.42deg);
+  }
+  6.00% {
+    transform: translateX(-6.34vw) 
+               translateY(1.18vw) 
+               translateZ(9.20vw)
+               rotateX(-61.53deg)
+               rotateY(-43.05deg)
+               rotateZ(41.00deg);
+  }
+  8.00% {
+    transform: translateX(-8.42vw) 
+               translateY(1.56vw) 
+               translateZ(8.12vw)
+               rotateX(-81.66deg)
+               rotateY(-57.13deg)
+               rotateZ(54.41deg);
+  }
+  10.00% {
+    transform: translateX(-10.46vw) 
+               translateY(1.94vw) 
+               translateZ(7.06vw)
+               rotateX(-101.47deg)
+               rotateY(-70.99deg)
+               rotateZ(67.61deg);
+  }
+  12.00% {
+    transform: translateX(-12.46vw) 
+               translateY(2.31vw) 
+               translateZ(6.02vw)
+               rotateX(-120.87deg)
+               rotateY(-84.57deg)
+               rotateZ(80.55deg);
+  }
+  14.00% {
+    transform: translateX(-14.41vw) 
+               translateY(2.68vw) 
+               translateZ(5.00vw)
+               rotateX(-139.81deg)
+               rotateY(-97.81deg)
+               rotateZ(93.16deg);
+  }
+  16.00% {
+    transform: translateX(-16.30vw) 
+               translateY(3.03vw) 
+               translateZ(4.02vw)
+               rotateX(-158.18deg)
+               rotateY(-110.67deg)
+               rotateZ(105.41deg);
+  }
+  18.00% {
+    transform: translateX(-18.13vw) 
+               translateY(3.37vw) 
+               translateZ(3.06vw)
+               rotateX(-175.94deg)
+               rotateY(-123.09deg)
+               rotateZ(117.24deg);
+  }
+  20.00% {
+    transform: translateX(-19.89vw) 
+               translateY(3.69vw) 
+               translateZ(2.15vw)
+               rotateX(-193.00deg)
+               rotateY(-135.03deg)
+               rotateZ(128.61deg);
+  }
+  22.00% {
+    transform: translateX(-21.57vw) 
+               translateY(4.01vw) 
+               translateZ(1.27vw)
+               rotateX(-209.30deg)
+               rotateY(-146.43deg)
+               rotateZ(139.47deg);
+  }
+  24.00% {
+    transform: translateX(-23.17vw) 
+               translateY(4.30vw) 
+               translateZ(0.44vw)
+               rotateX(-224.77deg)
+               rotateY(-157.26deg)
+               rotateZ(149.78deg);
+  }
+  26.00% {
+    transform: translateX(-24.67vw) 
+               translateY(4.58vw) 
+               translateZ(-0.34vw)
+               rotateX(-239.36deg)
+               rotateY(-167.46deg)
+               rotateZ(159.50deg);
+  }
+  28.00% {
+    transform: translateX(-26.08vw) 
+               translateY(4.84vw) 
+               translateZ(-1.07vw)
+               rotateX(-253.00deg)
+               rotateY(-177.00deg)
+               rotateZ(168.59deg);
+  }
+  30.00% {
+    transform: translateX(-27.38vw) 
+               translateY(5.08vw) 
+               translateZ(-1.75vw)
+               rotateX(-265.64deg)
+               rotateY(-185.85deg)
+               rotateZ(177.01deg);
+  }
+  32.00% {
+    transform: translateX(-28.57vw) 
+               translateY(5.31vw) 
+               translateZ(-2.37vw)
+               rotateX(-277.24deg)
+               rotateY(-193.96deg)
+               rotateZ(184.74deg);
+  }
+  34.00% {
+    transform: translateX(-29.66vw) 
+               translateY(5.51vw) 
+               translateZ(-2.93vw)
+               rotateX(-287.74deg)
+               rotateY(-201.31deg)
+               rotateZ(191.73deg);
+  }
+  36.00% {
+    transform: translateX(-30.62vw) 
+               translateY(5.69vw) 
+               translateZ(-3.44vw)
+               rotateX(-297.10deg)
+               rotateY(-207.86deg)
+               rotateZ(197.97deg);
+  }
+  38.00% {
+    transform: translateX(-31.47vw) 
+               translateY(5.84vw) 
+               translateZ(-3.88vw)
+               rotateX(-305.29deg)
+               rotateY(-213.59deg)
+               rotateZ(203.43deg);
+  }
+  40.00% {
+    transform: translateX(-32.19vw) 
+               translateY(5.98vw) 
+               translateZ(-4.25vw)
+               rotateX(-312.28deg)
+               rotateY(-218.48deg)
+               rotateZ(208.09deg);
+  }
+  42.00% {
+    transform: translateX(-32.78vw) 
+               translateY(6.09vw) 
+               translateZ(-4.56vw)
+               rotateX(-318.04deg)
+               rotateY(-222.51deg)
+               rotateZ(211.92deg);
+  }
+  44.00% {
+    transform: translateX(-33.24vw) 
+               translateY(6.17vw) 
+               translateZ(-4.80vw)
+               rotateX(-322.54deg)
+               rotateY(-225.65deg)
+               rotateZ(214.92deg);
+  }
+  46.00% {
+    transform: translateX(-33.58vw) 
+               translateY(6.24vw) 
+               translateZ(-4.97vw)
+               rotateX(-325.76deg)
+               rotateY(-227.91deg)
+               rotateZ(217.07deg);
+  }
+  48.00% {
+    transform: translateX(-33.78vw) 
+               translateY(6.27vw) 
+               translateZ(-5.08vw)
+               rotateX(-327.70deg)
+               rotateY(-229.27deg)
+               rotateZ(218.37deg);
+  }
+  50.00% {
+    transform: translateX(-33.84vw) 
+               translateY(6.28vw) 
+               translateZ(-5.11vw)
+               rotateX(-328.35deg)
+               rotateY(-229.72deg)
+               rotateZ(218.80deg);
+  }
+  52.00% {
+    transform: translateX(-33.78vw) 
+               translateY(6.27vw) 
+               translateZ(-5.08vw)
+               rotateX(-327.70deg)
+               rotateY(-229.27deg)
+               rotateZ(218.37deg);
+  }
+  54.00% {
+    transform: translateX(-33.58vw) 
+               translateY(6.24vw) 
+               translateZ(-4.97vw)
+               rotateX(-325.76deg)
+               rotateY(-227.91deg)
+               rotateZ(217.07deg);
+  }
+  56.00% {
+    transform: translateX(-33.24vw) 
+               translateY(6.17vw) 
+               translateZ(-4.80vw)
+               rotateX(-322.54deg)
+               rotateY(-225.65deg)
+               rotateZ(214.92deg);
+  }
+  58.00% {
+    transform: translateX(-32.78vw) 
+               translateY(6.09vw) 
+               translateZ(-4.56vw)
+               rotateX(-318.04deg)
+               rotateY(-222.51deg)
+               rotateZ(211.92deg);
+  }
+  60.00% {
+    transform: translateX(-32.19vw) 
+               translateY(5.98vw) 
+               translateZ(-4.25vw)
+               rotateX(-312.28deg)
+               rotateY(-218.48deg)
+               rotateZ(208.09deg);
+  }
+  62.00% {
+    transform: translateX(-31.47vw) 
+               translateY(5.84vw) 
+               translateZ(-3.88vw)
+               rotateX(-305.29deg)
+               rotateY(-213.59deg)
+               rotateZ(203.43deg);
+  }
+  64.00% {
+    transform: translateX(-30.62vw) 
+               translateY(5.69vw) 
+               translateZ(-3.44vw)
+               rotateX(-297.10deg)
+               rotateY(-207.86deg)
+               rotateZ(197.97deg);
+  }
+  66.00% {
+    transform: translateX(-29.66vw) 
+               translateY(5.51vw) 
+               translateZ(-2.93vw)
+               rotateX(-287.74deg)
+               rotateY(-201.31deg)
+               rotateZ(191.73deg);
+  }
+  68.00% {
+    transform: translateX(-28.57vw) 
+               translateY(5.31vw) 
+               translateZ(-2.37vw)
+               rotateX(-277.24deg)
+               rotateY(-193.96deg)
+               rotateZ(184.74deg);
+  }
+  70.00% {
+    transform: translateX(-27.38vw) 
+               translateY(5.08vw) 
+               translateZ(-1.75vw)
+               rotateX(-265.64deg)
+               rotateY(-185.85deg)
+               rotateZ(177.01deg);
+  }
+  72.00% {
+    transform: translateX(-26.08vw) 
+               translateY(4.84vw) 
+               translateZ(-1.07vw)
+               rotateX(-253.00deg)
+               rotateY(-177.00deg)
+               rotateZ(168.59deg);
+  }
+  74.00% {
+    transform: translateX(-24.67vw) 
+               translateY(4.58vw) 
+               translateZ(-0.34vw)
+               rotateX(-239.36deg)
+               rotateY(-167.46deg)
+               rotateZ(159.50deg);
+  }
+  76.00% {
+    transform: translateX(-23.17vw) 
+               translateY(4.30vw) 
+               translateZ(0.44vw)
+               rotateX(-224.77deg)
+               rotateY(-157.26deg)
+               rotateZ(149.78deg);
+  }
+  78.00% {
+    transform: translateX(-21.57vw) 
+               translateY(4.01vw) 
+               translateZ(1.27vw)
+               rotateX(-209.30deg)
+               rotateY(-146.43deg)
+               rotateZ(139.47deg);
+  }
+  80.00% {
+    transform: translateX(-19.89vw) 
+               translateY(3.69vw) 
+               translateZ(2.15vw)
+               rotateX(-193.00deg)
+               rotateY(-135.03deg)
+               rotateZ(128.61deg);
+  }
+  82.00% {
+    transform: translateX(-18.13vw) 
+               translateY(3.37vw) 
+               translateZ(3.06vw)
+               rotateX(-175.94deg)
+               rotateY(-123.09deg)
+               rotateZ(117.24deg);
+  }
+  84.00% {
+    transform: translateX(-16.30vw) 
+               translateY(3.03vw) 
+               translateZ(4.02vw)
+               rotateX(-158.18deg)
+               rotateY(-110.67deg)
+               rotateZ(105.41deg);
+  }
+  86.00% {
+    transform: translateX(-14.41vw) 
+               translateY(2.68vw) 
+               translateZ(5.00vw)
+               rotateX(-139.81deg)
+               rotateY(-97.81deg)
+               rotateZ(93.16deg);
+  }
+  88.00% {
+    transform: translateX(-12.46vw) 
+               translateY(2.31vw) 
+               translateZ(6.02vw)
+               rotateX(-120.87deg)
+               rotateY(-84.57deg)
+               rotateZ(80.55deg);
+  }
+  90.00% {
+    transform: translateX(-10.46vw) 
+               translateY(1.94vw) 
+               translateZ(7.06vw)
+               rotateX(-101.47deg)
+               rotateY(-70.99deg)
+               rotateZ(67.61deg);
+  }
+  92.00% {
+    transform: translateX(-8.42vw) 
+               translateY(1.56vw) 
+               translateZ(8.12vw)
+               rotateX(-81.66deg)
+               rotateY(-57.13deg)
+               rotateZ(54.41deg);
+  }
+  94.00% {
+    transform: translateX(-6.34vw) 
+               translateY(1.18vw) 
+               translateZ(9.20vw)
+               rotateX(-61.53deg)
+               rotateY(-43.05deg)
+               rotateZ(41.00deg);
+  }
+  96.00% {
+    transform: translateX(-4.24vw) 
+               translateY(0.79vw) 
+               translateZ(10.29vw)
+               rotateX(-41.15deg)
+               rotateY(-28.79deg)
+               rotateZ(27.42deg);
+  }
+  98.00% {
+    transform: translateX(-2.13vw) 
+               translateY(0.39vw) 
+               translateZ(11.39vw)
+               rotateX(-20.62deg)
+               rotateY(-14.42deg)
+               rotateZ(13.74deg);
+  }
+  100.00% {
+    transform: translateX(-0.00vw) 
+               translateY(0.00vw) 
+               translateZ(12.50vw)
+               rotateX(-0.00deg)
+               rotateY(-0.00deg)
+               rotateZ(0.00deg);
+  }
+}
+
+@keyframes stackRotation {
+  0.00% {
+    transform: translateX(-35.00vw)
+               translateY(-19.69vw)
+               rotateX(45.00deg) 
+               rotateY(0.00deg) 
+               rotateZ(45.00deg);
+  }
+  2.00% {
+    transform: translateX(-33.60vw)
+               translateY(-18.90vw)
+               rotateX(45.00deg) 
+               rotateY(0.00deg) 
+               rotateZ(45.00deg);
+  }
+  4.00% {
+    transform: translateX(-32.20vw)
+               translateY(-18.11vw)
+               rotateX(45.00deg) 
+               rotateY(0.00deg) 
+               rotateZ(45.00deg);
+  }
+  6.00% {
+    transform: translateX(-30.80vw)
+               translateY(-17.32vw)
+               rotateX(45.00deg) 
+               rotateY(0.00deg) 
+               rotateZ(45.00deg);
+  }
+  8.00% {
+    transform: translateX(-29.40vw)
+               translateY(-16.54vw)
+               rotateX(45.00deg) 
+               rotateY(0.00deg) 
+               rotateZ(45.00deg);
+  }
+  10.00% {
+    transform: translateX(-28.00vw)
+               translateY(-15.75vw)
+               rotateX(45.00deg) 
+               rotateY(0.00deg) 
+               rotateZ(45.00deg);
+  }
+  12.00% {
+    transform: translateX(-26.60vw)
+               translateY(-14.96vw)
+               rotateX(45.00deg) 
+               rotateY(0.00deg) 
+               rotateZ(45.00deg);
+  }
+  14.00% {
+    transform: translateX(-25.20vw)
+               translateY(-14.18vw)
+               rotateX(45.00deg) 
+               rotateY(0.00deg) 
+               rotateZ(45.00deg);
+  }
+  16.00% {
+    transform: translateX(-23.80vw)
+               translateY(-13.39vw)
+               rotateX(45.00deg) 
+               rotateY(0.00deg) 
+               rotateZ(45.00deg);
+  }
+  18.00% {
+    transform: translateX(-22.40vw)
+               translateY(-12.60vw)
+               rotateX(45.00deg) 
+               rotateY(0.00deg) 
+               rotateZ(45.00deg);
+  }
+  20.00% {
+    transform: translateX(-21.00vw)
+               translateY(-11.81vw)
+               rotateX(45.00deg) 
+               rotateY(0.00deg) 
+               rotateZ(45.00deg);
+  }
+  22.00% {
+    transform: translateX(-19.60vw)
+               translateY(-11.03vw)
+               rotateX(45.00deg) 
+               rotateY(0.00deg) 
+               rotateZ(45.00deg);
+  }
+  24.00% {
+    transform: translateX(-18.20vw)
+               translateY(-10.24vw)
+               rotateX(45.00deg) 
+               rotateY(0.00deg) 
+               rotateZ(45.00deg);
+  }
+  26.00% {
+    transform: translateX(-16.80vw)
+               translateY(-9.45vw)
+               rotateX(45.00deg) 
+               rotateY(0.00deg) 
+               rotateZ(45.00deg);
+  }
+  28.00% {
+    transform: translateX(-15.40vw)
+               translateY(-8.66vw)
+               rotateX(45.00deg) 
+               rotateY(0.00deg) 
+               rotateZ(45.00deg);
+  }
+  30.00% {
+    transform: translateX(-14.00vw)
+               translateY(-7.88vw)
+               rotateX(45.00deg) 
+               rotateY(0.00deg) 
+               rotateZ(45.00deg);
+  }
+  32.00% {
+    transform: translateX(-12.60vw)
+               translateY(-7.09vw)
+               rotateX(45.00deg) 
+               rotateY(0.00deg) 
+               rotateZ(45.00deg);
+  }
+  34.00% {
+    transform: translateX(-11.20vw)
+               translateY(-6.30vw)
+               rotateX(45.00deg) 
+               rotateY(0.00deg) 
+               rotateZ(45.00deg);
+  }
+  36.00% {
+    transform: translateX(-9.80vw)
+               translateY(-5.51vw)
+               rotateX(45.00deg) 
+               rotateY(0.00deg) 
+               rotateZ(45.00deg);
+  }
+  38.00% {
+    transform: translateX(-8.40vw)
+               translateY(-4.72vw)
+               rotateX(45.00deg) 
+               rotateY(0.00deg) 
+               rotateZ(45.00deg);
+  }
+  40.00% {
+    transform: translateX(-7.00vw)
+               translateY(-3.94vw)
+               rotateX(45.00deg) 
+               rotateY(0.00deg) 
+               rotateZ(45.00deg);
+  }
+  42.00% {
+    transform: translateX(-5.60vw)
+               translateY(-3.15vw)
+               rotateX(45.00deg) 
+               rotateY(0.00deg) 
+               rotateZ(45.00deg);
+  }
+  44.00% {
+    transform: translateX(-4.20vw)
+               translateY(-2.36vw)
+               rotateX(45.00deg) 
+               rotateY(0.00deg) 
+               rotateZ(45.00deg);
+  }
+  46.00% {
+    transform: translateX(-2.80vw)
+               translateY(-1.57vw)
+               rotateX(45.00deg) 
+               rotateY(0.00deg) 
+               rotateZ(45.00deg);
+  }
+  48.00% {
+    transform: translateX(-1.40vw)
+               translateY(-0.79vw)
+               rotateX(45.00deg) 
+               rotateY(0.00deg) 
+               rotateZ(45.00deg);
+  }
+  50.00% {
+    transform: translateX(0.00vw)
+               translateY(0.00vw)
+               rotateX(45.00deg) 
+               rotateY(0.00deg) 
+               rotateZ(45.00deg);
+  }
+  52.00% {
+    transform: translateX(1.40vw)
+               translateY(0.79vw)
+               rotateX(45.00deg) 
+               rotateY(0.00deg) 
+               rotateZ(45.00deg);
+  }
+  54.00% {
+    transform: translateX(2.80vw)
+               translateY(1.58vw)
+               rotateX(45.00deg) 
+               rotateY(0.00deg) 
+               rotateZ(45.00deg);
+  }
+  56.00% {
+    transform: translateX(4.20vw)
+               translateY(2.36vw)
+               rotateX(45.00deg) 
+               rotateY(0.00deg) 
+               rotateZ(45.00deg);
+  }
+  58.00% {
+    transform: translateX(5.60vw)
+               translateY(3.15vw)
+               rotateX(45.00deg) 
+               rotateY(0.00deg) 
+               rotateZ(45.00deg);
+  }
+  60.00% {
+    transform: translateX(7.00vw)
+               translateY(3.94vw)
+               rotateX(45.00deg) 
+               rotateY(0.00deg) 
+               rotateZ(45.00deg);
+  }
+  62.00% {
+    transform: translateX(8.40vw)
+               translateY(4.73vw)
+               rotateX(45.00deg) 
+               rotateY(0.00deg) 
+               rotateZ(45.00deg);
+  }
+  64.00% {
+    transform: translateX(9.80vw)
+               translateY(5.51vw)
+               rotateX(45.00deg) 
+               rotateY(0.00deg) 
+               rotateZ(45.00deg);
+  }
+  66.00% {
+    transform: translateX(11.20vw)
+               translateY(6.30vw)
+               rotateX(45.00deg) 
+               rotateY(0.00deg) 
+               rotateZ(45.00deg);
+  }
+  68.00% {
+    transform: translateX(12.60vw)
+               translateY(7.09vw)
+               rotateX(45.00deg) 
+               rotateY(0.00deg) 
+               rotateZ(45.00deg);
+  }
+  70.00% {
+    transform: translateX(14.00vw)
+               translateY(7.88vw)
+               rotateX(45.00deg) 
+               rotateY(0.00deg) 
+               rotateZ(45.00deg);
+  }
+  72.00% {
+    transform: translateX(15.40vw)
+               translateY(8.66vw)
+               rotateX(45.00deg) 
+               rotateY(0.00deg) 
+               rotateZ(45.00deg);
+  }
+  74.00% {
+    transform: translateX(16.80vw)
+               translateY(9.45vw)
+               rotateX(45.00deg) 
+               rotateY(0.00deg) 
+               rotateZ(45.00deg);
+  }
+  76.00% {
+    transform: translateX(18.20vw)
+               translateY(10.24vw)
+               rotateX(45.00deg) 
+               rotateY(0.00deg) 
+               rotateZ(45.00deg);
+  }
+  78.00% {
+    transform: translateX(19.60vw)
+               translateY(11.03vw)
+               rotateX(45.00deg) 
+               rotateY(0.00deg) 
+               rotateZ(45.00deg);
+  }
+  80.00% {
+    transform: translateX(21.00vw)
+               translateY(11.81vw)
+               rotateX(45.00deg) 
+               rotateY(0.00deg) 
+               rotateZ(45.00deg);
+  }
+  82.00% {
+    transform: translateX(22.40vw)
+               translateY(12.60vw)
+               rotateX(45.00deg) 
+               rotateY(0.00deg) 
+               rotateZ(45.00deg);
+  }
+  84.00% {
+    transform: translateX(23.80vw)
+               translateY(13.39vw)
+               rotateX(45.00deg) 
+               rotateY(0.00deg) 
+               rotateZ(45.00deg);
+  }
+  86.00% {
+    transform: translateX(25.20vw)
+               translateY(14.17vw)
+               rotateX(45.00deg) 
+               rotateY(0.00deg) 
+               rotateZ(45.00deg);
+  }
+  88.00% {
+    transform: translateX(26.60vw)
+               translateY(14.96vw)
+               rotateX(45.00deg) 
+               rotateY(0.00deg) 
+               rotateZ(45.00deg);
+  }
+  90.00% {
+    transform: translateX(28.00vw)
+               translateY(15.75vw)
+               rotateX(45.00deg) 
+               rotateY(0.00deg) 
+               rotateZ(45.00deg);
+  }
+  92.00% {
+    transform: translateX(29.40vw)
+               translateY(16.54vw)
+               rotateX(45.00deg) 
+               rotateY(0.00deg) 
+               rotateZ(45.00deg);
+  }
+  94.00% {
+    transform: translateX(30.80vw)
+               translateY(17.32vw)
+               rotateX(45.00deg) 
+               rotateY(0.00deg) 
+               rotateZ(45.00deg);
+  }
+  96.00% {
+    transform: translateX(32.20vw)
+               translateY(18.11vw)
+               rotateX(45.00deg) 
+               rotateY(0.00deg) 
+               rotateZ(45.00deg);
+  }
+  98.00% {
+    transform: translateX(33.60vw)
+               translateY(18.90vw)
+               rotateX(45.00deg) 
+               rotateY(0.00deg) 
+               rotateZ(45.00deg);
+  }
+  100.00% {
+    transform: translateX(35.00vw)
+               translateY(19.69vw)
+               rotateX(45.00deg) 
+               rotateY(0.00deg) 
+               rotateZ(45.00deg);
+  }
+}
+
+
+    .plane-0 {
+      background: #C50978;
+      opacity: 0.5;
+      animation-name: plane0Animation;
+      animation-duration: 20s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    }
+    .plane-1 {
+      background: #C50978;
+      opacity: 0.5;
+      animation-name: plane1Animation;
+      animation-duration: 20s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    }
+    .plane-2 {
+      background: #C50978;
+      opacity: 0.5;
+      animation-name: plane2Animation;
+      animation-duration: 20s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    }
+    .plane-3 {
+      background: #C50978;
+      opacity: 0.5;
+      animation-name: plane3Animation;
+      animation-duration: 20s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    }
+    .plane-4 {
+      background: #C50978;
+      opacity: 0.5;
+      animation-name: plane4Animation;
+      animation-duration: 20s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
     }
